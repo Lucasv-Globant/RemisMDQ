@@ -17,6 +17,7 @@
 		A0C577021A52D7FD005EF46E /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C576FD1A52D7FD005EF46E /* Request.m */; };
 		A0C577031A52D7FD005EF46E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C576FF1A52D7FD005EF46E /* User.m */; };
 		A0C577041A52D7FD005EF46E /* Vehicle.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C577011A52D7FD005EF46E /* Vehicle.m */; };
+		A0C577101A533365005EF46E /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C5770F1A533365005EF46E /* Location.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		A0C576FF1A52D7FD005EF46E /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		A0C577001A52D7FD005EF46E /* Vehicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vehicle.h; sourceTree = "<group>"; };
 		A0C577011A52D7FD005EF46E /* Vehicle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vehicle.m; sourceTree = "<group>"; };
+		A0C5770F1A533365005EF46E /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		A0C577111A533624005EF46E /* Location.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +141,8 @@
 				A0C576FF1A52D7FD005EF46E /* User.m */,
 				A0C577001A52D7FD005EF46E /* Vehicle.h */,
 				A0C577011A52D7FD005EF46E /* Vehicle.m */,
+				A0C5770F1A533365005EF46E /* Location.m */,
+				A0C577111A533624005EF46E /* Location.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0C577031A52D7FD005EF46E /* User.m in Sources */,
+				A0C577101A533365005EF46E /* Location.m in Sources */,
 				A0C576DE1A52D553005EF46E /* ViewController.m in Sources */,
 				A0C577041A52D7FD005EF46E /* Vehicle.m in Sources */,
 				A0C577021A52D7FD005EF46E /* Request.m in Sources */,
