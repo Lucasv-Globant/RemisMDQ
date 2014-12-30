@@ -18,6 +18,7 @@
 		A0C577031A52D7FD005EF46E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C576FF1A52D7FD005EF46E /* User.m */; };
 		A0C577041A52D7FD005EF46E /* Vehicle.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C577011A52D7FD005EF46E /* Vehicle.m */; };
 		A0C577101A533365005EF46E /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C5770F1A533365005EF46E /* Location.m */; };
+		A0C577151A5347FF005EF46E /* CurrentRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C577141A5347FF005EF46E /* CurrentRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,9 @@
 		A0C577011A52D7FD005EF46E /* Vehicle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vehicle.m; sourceTree = "<group>"; };
 		A0C5770F1A533365005EF46E /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		A0C577111A533624005EF46E /* Location.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		A0C577121A534270005EF46E /* Agency.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Agency.h; sourceTree = "<group>"; };
+		A0C577131A5347DF005EF46E /* CurrentRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentRequest.h; sourceTree = "<group>"; };
+		A0C577141A5347FF005EF46E /* CurrentRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,9 @@
 				A0C577011A52D7FD005EF46E /* Vehicle.m */,
 				A0C5770F1A533365005EF46E /* Location.m */,
 				A0C577111A533624005EF46E /* Location.h */,
+				A0C577121A534270005EF46E /* Agency.h */,
+				A0C577131A5347DF005EF46E /* CurrentRequest.h */,
+				A0C577141A5347FF005EF46E /* CurrentRequest.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -254,6 +261,7 @@
 				A0C577021A52D7FD005EF46E /* Request.m in Sources */,
 				A0C576DB1A52D553005EF46E /* AppDelegate.m in Sources */,
 				A0C576D81A52D553005EF46E /* main.m in Sources */,
+				A0C577151A5347FF005EF46E /* CurrentRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

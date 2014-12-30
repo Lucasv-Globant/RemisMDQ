@@ -7,5 +7,8 @@
 //
 
 @interface User : NSObject
+
+@property (nonatomic, strong) NSNumber *phoneNumber;
+@property (nonatomic, strong) NSMutableArray *favoriteLocations; //An array of locations saved as "favorite"
 @end
 
