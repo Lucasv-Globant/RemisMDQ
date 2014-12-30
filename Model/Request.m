@@ -6,12 +6,19 @@
 //  Copyright (c) 2014 Lucas. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "Request.h"
 
+
+
+/*
+ Request class : 
+ Represents a request made by a user to dispatch.
+ A request can be in one of many states (cancelled, in progresss, etc).
+*/
 
 @interface Request ()
 @end
 
 @implementation Request : NSObject
+
+
 @end
