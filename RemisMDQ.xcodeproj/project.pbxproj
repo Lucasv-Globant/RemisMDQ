@@ -14,6 +14,9 @@
 		A0C576E31A52D553005EF46E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0C576E21A52D553005EF46E /* Images.xcassets */; };
 		A0C576E61A52D553005EF46E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0C576E41A52D553005EF46E /* LaunchScreen.xib */; };
 		A0C576F21A52D553005EF46E /* RemisMDQTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C576F11A52D553005EF46E /* RemisMDQTests.m */; };
+		A0C577021A52D7FD005EF46E /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C576FD1A52D7FD005EF46E /* Request.m */; };
+		A0C577031A52D7FD005EF46E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C576FF1A52D7FD005EF46E /* User.m */; };
+		A0C577041A52D7FD005EF46E /* Vehicle.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C577011A52D7FD005EF46E /* Vehicle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,12 @@
 		A0C576EB1A52D553005EF46E /* RemisMDQTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemisMDQTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0C576F01A52D553005EF46E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0C576F11A52D553005EF46E /* RemisMDQTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemisMDQTests.m; sourceTree = "<group>"; };
+		A0C576FC1A52D7FD005EF46E /* Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Request.h; sourceTree = "<group>"; };
+		A0C576FD1A52D7FD005EF46E /* Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Request.m; sourceTree = "<group>"; };
+		A0C576FE1A52D7FD005EF46E /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		A0C576FF1A52D7FD005EF46E /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		A0C577001A52D7FD005EF46E /* Vehicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vehicle.h; sourceTree = "<group>"; };
+		A0C577011A52D7FD005EF46E /* Vehicle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vehicle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +90,7 @@
 		A0C576D41A52D553005EF46E /* RemisMDQ */ = {
 			isa = PBXGroup;
 			children = (
+				A0C576FB1A52D7FD005EF46E /* Model */,
 				A0C576D91A52D553005EF46E /* AppDelegate.h */,
 				A0C576DA1A52D553005EF46E /* AppDelegate.m */,
 				A0C576DC1A52D553005EF46E /* ViewController.h */,
@@ -117,6 +127,19 @@
 				A0C576F01A52D553005EF46E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A0C576FB1A52D7FD005EF46E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A0C576FC1A52D7FD005EF46E /* Request.h */,
+				A0C576FD1A52D7FD005EF46E /* Request.m */,
+				A0C576FE1A52D7FD005EF46E /* User.h */,
+				A0C576FF1A52D7FD005EF46E /* User.m */,
+				A0C577001A52D7FD005EF46E /* Vehicle.h */,
+				A0C577011A52D7FD005EF46E /* Vehicle.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,7 +242,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0C577031A52D7FD005EF46E /* User.m in Sources */,
 				A0C576DE1A52D553005EF46E /* ViewController.m in Sources */,
+				A0C577041A52D7FD005EF46E /* Vehicle.m in Sources */,
+				A0C577021A52D7FD005EF46E /* Request.m in Sources */,
 				A0C576DB1A52D553005EF46E /* AppDelegate.m in Sources */,
 				A0C576D81A52D553005EF46E /* main.m in Sources */,
 			);
@@ -414,6 +440,7 @@
 				A0C576F71A52D553005EF46E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A0C576F81A52D553005EF46E /* Build configuration list for PBXNativeTarget "RemisMDQTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +449,7 @@
 				A0C576FA1A52D553005EF46E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
