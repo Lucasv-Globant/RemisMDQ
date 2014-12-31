@@ -15,12 +15,14 @@
 
 //RequestStatusCode enumerates the possible states of a request.
 typedef enum {
-              RequestStatusCancelled,
-              RequestStatusInProgress,
-              RequestStatusNotConfirmed,
-              RequestStatusRejected,
-              RequestStatusUserWasAbsent,
-              RequestStatusCompleted
+              RequestStatusNil,             // Status for a null request. It is the default status.
+              RequestStatusCancelled,       // Status for when a user cancels the request
+              RequestStatusEnRouteToOrigin, // The vehicle is on its' way to the user's location
+              RequestStatusRejected,        // The agency has rejected the request
+              RequestStatusVehicleWaitingForUser, // The vehicle arrived to the user's location and it's waiting for him/her
+              RequestStatusUserWasAbsent,   // The vehicle arrived to the user's location, but he wasn't present.
+              RequestStatusEnRouteToDestination, // The user got into the vehicle and is on its' way to destination
+              RequestStatusCompleted        // The vehicle arrived to destination. 
              } RequestStatusCode;
 
 
