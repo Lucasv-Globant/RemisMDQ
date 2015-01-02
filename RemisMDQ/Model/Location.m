@@ -20,6 +20,9 @@
     self = [super init];
     if (self)
     {
+        [self setObjectId:@""];
+        [self setCreated_at:[NSDate date]];
+        [self setUpdated_at:[NSDate date]];
         [self setLatitude:[NSNumber numberWithFloat:0.0f]];
         [self setLongitude:[NSNumber numberWithFloat:0.0f]];
         [self setStreet:@""];
@@ -38,6 +41,9 @@
 {
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
     
+    [dict setObject:[self objectId] forKey:@"objectId"];
+    [dict setObject:[self created_at] forKey:@"created_at"];
+    [dict setObject:[self updated_at] forKey:@"updated_at"];
     [dict setObject:[self latitude] forKey:@"latitude"];
     [dict setObject:[self longitude] forKey:@"longitude"];
     [dict setObject:[self street] forKey:@"street"];
@@ -49,6 +55,7 @@
     [dict setObject:[self zipCode] forKey:@"zipCode"];
     return dict;
 }
+
 
 
 

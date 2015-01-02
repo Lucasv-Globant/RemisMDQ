@@ -31,4 +31,26 @@
 }
 
 
+-(NSMutableDictionary *)outputToDictionary
+{
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+    [dict setObject:[self objectId] forKey:@"objectId"];
+    [dict setObject:[self created_at] forKey:@"created_at"];
+    [dict setObject:[self updated_at] forKey:@"updated_at"];
+    
+    [dict setObject:[[self agency] objectId] forKey:@"agency"];
+    [dict setObject:[self licensePlate] forKey: @"licensePlate"];
+    [dict setObject:[self lastKnownLocation] forKey:@"lastKnownLocation"];
+    [dict setObject:[NSNumber numberWithInt:[self model]] forKey:@"model"];
+    [dict setObject:[NSNumber numberWithInt:[self color]] forKey:@"color"];
+    return dict;
+}
+
+
+
+-(void)saveToLocalStorage
+{
+    
+}
+
 @end

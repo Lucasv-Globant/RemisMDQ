@@ -35,7 +35,7 @@
     NSMutableArray *favorites = [[NSMutableArray alloc] init];
     for (Location *loc in [self favoriteLocations])
     {
-        [favorites addObject:[loc uniqueCode]];
+        [favorites addObject:[loc objectId]];
     }
     
     [dict setObject:favorites forKey:@"favoriteLocations"];
