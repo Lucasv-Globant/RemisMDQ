@@ -19,4 +19,23 @@
 
 @implementation Request : NSObject
 
+-(id)init
+//Initializes the instance with default values, which should be properly set afterwards
+{
+    self = [super init];
+    if (self)
+    {
+        [self setUser:[[User alloc] init]];
+        [self setVehicle:[[Vehicle alloc] init]];
+        [self setAgency:[[Agency alloc] init]];
+        [self setCreationTime: [NSDate date]];
+        [self setStatusCode:RequestStatusNil];
+        [self setOriginLocation:[[Location alloc] init]];
+        [self setDestinationLocation:[[Location alloc] init]];
+        [self setETAToSourceLocation:[NSNumber numberWithInt:0]];
+        [self setETAFromSourceLocationToDestinationLocation:[NSNumber numberWithInt:0]];
+    }
+    return self;
+}
+
 @end

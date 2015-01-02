@@ -38,5 +38,6 @@ typedef enum {
 @property (nonatomic, strong) NSNumber *ETAToSourceLocation; //expressed in minutes, when available
 @property (nonatomic, strong) NSNumber *ETAFromSourceLocationToDestinationLocation; //expressed in minutes, when available
 
+-(id)init;
 
 @end

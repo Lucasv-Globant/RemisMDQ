@@ -14,4 +14,23 @@
 
 @implementation Location : NSObject
 
+-(id)init
+//Initializes the instance with default values, which should be properly set afterwards
+{
+    self = [super init];
+    if (self)
+    {
+        [self setLatitude:[NSNumber numberWithFloat:0.0f]];
+        [self setLongitude:[NSNumber numberWithFloat:0.0f]];
+        [self setStreet:@""];
+        [self setHouseNumbering:@""];
+        [self setHouseDetails:@""];
+        [self setCity:@""];
+        [self setCountry:@""];
+        [self setProvince:@""];
+        [self setZipCode:@""];
+    }
+    return self;
+}
+
 @end

@@ -18,4 +18,6 @@
 @property (nonatomic, strong) NSString *Province;
 @property (nonatomic, strong) NSString *Country;
 
+-(id)init;
+
 @end

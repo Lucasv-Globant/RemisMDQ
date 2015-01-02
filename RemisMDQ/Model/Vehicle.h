@@ -12,20 +12,22 @@
 @interface Vehicle : NSObject
 
 typedef enum {
-                    Corsa,
-                    Megane,
-                    Logan,
-                    C4,
-                    Siena
+                    VehicleModelNotSpecified,
+                    VehicleModelCorsa,
+                    VehicleModelMegane,
+                    VehicleModelLogan,
+                    VehicleModelC4,
+                    VehicleModelSiena
 } VehicleModel;
 
 typedef enum {
-    Gray,
-    Silver,
-    White,
-    Black,
-    Red,
-    Blue
+    VehicleColorNotSpecified,
+    VehicleColorGray,
+    VehicleColorSilver,
+    VehicleColorWhite,
+    VehicleColorBlack,
+    VehicleColorRed,
+    VehicleColorBlue
 } VehicleColor;
 
 @property VehicleModel model;
@@ -33,5 +35,7 @@ typedef enum {
 @property (nonatomic,strong) NSString *licensePlate;
 @property (nonatomic, strong) Agency *agency;
 @property (nonatomic, strong) Location *lastKnownLocation;
+
+-(id)init;
 
 @end

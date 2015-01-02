@@ -13,4 +13,18 @@
 @end
 
 @implementation User : NSObject
+
+-(id)init
+//Initializes the instance with default values, which should be properly set afterwards
+
+{
+    self = [super init];
+    if (self)
+    {
+        [self setPhoneNumber:[NSNumber numberWithInt:0]];
+        [self setFavoriteLocations:[[NSMutableArray alloc] init]];
+    }
+    return self;
+}
+
 @end

@@ -13,4 +13,22 @@
 @end
 
 @implementation Vehicle : NSObject
+
+-(id)init
+//Initializes the instance with default values, which should be properly set afterwards
+
+{
+    self = [super init];
+    if (self)
+    {
+        [self setModel:VehicleModelNotSpecified];
+        [self setColor:VehicleColorNotSpecified];
+        [self setAgency:nil];
+        [self setLicensePlate:@""];
+        [self setLastKnownLocation:nil];
+    }
+    return self;
+}
+
+
 @end
