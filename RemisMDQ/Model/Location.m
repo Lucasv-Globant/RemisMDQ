@@ -33,4 +33,23 @@
     return self;
 }
 
+
+-(NSMutableDictionary *)outputToDictionary
+{
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+    
+    [dict setObject:[self latitude] forKey:@"latitude"];
+    [dict setObject:[self longitude] forKey:@"longitude"];
+    [dict setObject:[self street] forKey:@"street"];
+    [dict setObject:[self houseNumbering] forKey:@"houseNumbering"];
+    [dict setObject:[self houseDetails] forKey:@"houseDetails"];
+    [dict setObject:[self city] forKey:@"city"];
+    [dict setObject:[self country] forKey:@"country"];
+    [dict setObject:[self province] forKey:@"province"];
+    [dict setObject:[self zipCode] forKey:@"zipCode"];
+    return dict;
+}
+
+
+
 @end

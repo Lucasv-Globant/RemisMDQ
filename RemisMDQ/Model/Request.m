@@ -28,7 +28,9 @@
         [self setUser:[[User alloc] init]];
         [self setVehicle:[[Vehicle alloc] init]];
         [self setAgency:[[Agency alloc] init]];
-        [self setCreationTime: [NSDate date]];
+        [self setObjectId:@""];
+        [self setCreated_at: [NSDate date]];
+        [self setUpdated_at: [NSDate date]];
         [self setStatusCode:RequestStatusNil];
         [self setOriginLocation:[[Location alloc] init]];
         [self setDestinationLocation:[[Location alloc] init]];
@@ -36,6 +38,27 @@
         [self setETAFromSourceLocationToDestinationLocation:[NSNumber numberWithInt:0]];
     }
     return self;
+}
+
+
+-(NSMutableDictionary *)outputToDictionary
+{
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+    
+    [dict setObject:[[self user] objectId] forKey:@"user"];
+    [dict setObject:[[self vehicle] objectId] forKey:@"vehicle"];
+    [dict setObject:[[self agency] objectId] forKey:@"agency"];
+    [dict setObject:[self objectId] forKey:@"objectId"];
+    [dict setObject:[self created_at] forKey:@"created_at"];
+    [dict setObject:[self updated_at] forKey:@"updated_at"];
+    
+    [dict setObject:[NSNumber numberWithInt:[self statusCode]] forKey:@"statusCode"];
+    [dict setObject:[[self originLocation] outputToDictionary] forKey:@"originLocation"];
+    [dict setObject:[[self destinationLocation] outputToDictionary] forKey:@"destinationLocation"];
+    [dict setObject:[self ETAToSourceLocation] forKey:@"ETAToSourceLocation"];
+    [dict setObject:[self ETAFromSourceLocationToDestinationLocation] forKey:@"ETAFromSourceLocationToDestinationLocation"];
+    
+    return dict;
 }
 
 @end

@@ -6,7 +6,13 @@
 //  Copyright (c) 2014 Globant iOS MDQ. All rights reserved.
 //
 
+#import "Location.h"
+
 @interface User : NSObject
+
+@property (nonatomic, strong) NSString *objectId;
+@property (nonatomic, strong) NSDate *created_at;
+@property (nonatomic, strong) NSDate *updated_at;
 
 @property (nonatomic, strong) NSNumber *phoneNumber;
 @property (nonatomic, strong) NSMutableArray *favoriteLocations; //An array of locations saved as "favorite"

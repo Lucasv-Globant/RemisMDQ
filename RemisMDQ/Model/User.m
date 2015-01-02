@@ -27,4 +27,20 @@
     return self;
 }
 
+-(NSMutableDictionary *)outputToDictionary
+{
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+    [dict setObject:[self phoneNumber] forKey:@"phoneNumber"];
+    
+    NSMutableArray *favorites = [[NSMutableArray alloc] init];
+    for (Location *loc in [self favoriteLocations])
+    {
+        [favorites addObject:[loc uniqueCode]];
+    }
+    
+    [dict setObject:favorites forKey:@"favoriteLocations"];
+    
+    return dict;
+}
+
 @end
