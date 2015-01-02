@@ -22,7 +22,7 @@ typedef enum {
               RequestStatusVehicleWaitingForUser, // The vehicle arrived to the user's location and it's waiting for him/her
               RequestStatusUserWasAbsent,   // The vehicle arrived to the user's location, but he wasn't present.
               RequestStatusEnRouteToDestination, // The user got into the vehicle and is on its' way to destination
-              RequestStatusCompleted        // The vehicle arrived to destination. 
+              RequestStatusCompleted        // The vehicle arrived to destination.
              } RequestStatusCode;
 
 

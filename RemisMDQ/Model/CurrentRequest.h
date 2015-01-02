@@ -10,7 +10,7 @@
 *  This class represents the current request, if there's one
 *  It is a singleton of the Request class. 
 *  For now, we allow only one request per user for the entire app
-*  request at a time
+*  at a time
 */
 
 
