@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Request.h"
 typedef void (^Success)(NSMutableDictionary * dic);
 typedef void (^Failure)(NSError* error);
 @interface Facade : NSObject
@@ -15,7 +16,7 @@ typedef void (^Failure)(NSError* error);
 + (id)sharedInstance;
 
 #pragma mark - Method
--(void)insertDataInParse:(Success)success failure:(Failure)failure;
+-(void)insertRequestDataInParse:(Success)success failure:(Failure)failure data:(Request *)requestSave;
 -(void)findInParse:(Success)success failure:(Failure)failure;
 -(void)updateInParse:(Success)success failure:(Failure)failure;
 -(void)deleteInPase:(Success)success failure:(Failure)failure;

@@ -8,7 +8,7 @@
 
 #import "Facade.h"
 #import <Parse/Parse.h>
-#import "Request.h"
+
 
 @interface Facade ()
 @property (nonatomic,copy) Success successBlock;
@@ -46,7 +46,6 @@
 -(void)insertRequestDataInParse:(Success)success failure:(Failure)failure data:(Request *)requestSave
 {
     PFObject * request = [PFObject objectWithClassName:@"Pedidos"];
-    [request setObject:[requestSave creationTime] forKey:@"creationTime"];
     [request setObject:[NSNumber numberWithInt:[requestSave statusCode]] forKey:@"statusCode"];
     [request setObject:[requestSave originLocation] forKey:@"originLocation"];
     [request setObject:[requestSave destinationLocation] forKey:@"destinationLocation"];
