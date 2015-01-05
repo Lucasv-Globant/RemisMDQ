@@ -28,7 +28,7 @@
     dispatch_once(&p, ^{
         _sharedObject = [[self alloc] initWithParse];
     });
-    
+
     // returns the same object each time
     return _sharedObject;
 }
@@ -82,16 +82,18 @@
         }];
  
     }];
-    
 }
 
--(void)findInParseWith:(NSString *)Id in:(NSString *)from
+-(void)findInParseWith:(NSString *)whereKey value:(NSString *)value in:(NSString *)from
 {
     //busco en parse por un Id en el nsstring que llega al final del parametro
     PFQuery * query = [PFQuery queryWithClassName:from];
-    [query getObjectInBackgroundWithId:Id block:^(PFObject *object, NSError *error) {
-        NSLog(@"Econtro esta cantidad de objetos %@",object);
-    }];
+    [query  whereKey:whereKey equalTo:value];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            statements
+        }
+    }]
     
 }
 
