@@ -17,8 +17,8 @@ typedef void (^Failure)(NSError* error);
 
 #pragma mark - Method
 -(void)insertRequestDataInParse:(Success)success failure:(Failure)failure data:(Request *)requestSave;
--(void)findInParse:(Success)success failure:(Failure)failure;
--(void)updateInParse:(Success)success failure:(Failure)failure;
--(void)deleteInPase:(Success)success failure:(Failure)failure;
+-(void)findInParse:(Success)success failure:(Failure)failure with:(NSString *)Id in:(NSString *)from;
+-(void)updateRequestInParse:(Success)success failure:(Failure)failure with:(NSString *)Id data:(NSDictionary *)dataUpdate;
+-(void)deleteInPase:(Success)success failure:(Failure)failure with:(NSString *)Id in:(NSString *)from;
 
 @end

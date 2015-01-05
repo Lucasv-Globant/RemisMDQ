@@ -31,7 +31,9 @@
 		A407FB051A56CCD000B42954 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A407FB041A56CCD000B42954 /* SystemConfiguration.framework */; };
 		A407FB071A56CCE500B42954 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A407FB061A56CCE500B42954 /* libz.dylib */; };
 		A407FB091A56CCF300B42954 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A407FB081A56CCF300B42954 /* libsqlite3.dylib */; };
-		A407FB0B1A56CDCD00B42954 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A407FB0A1A56CDCD00B42954 /* Parse.framework */; };
+		A447804E1A5AD18F00BDF203 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A447804D1A5AD18F00BDF203 /* Parse.framework */; };
+		A44780501A5AD3EB00BDF203 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A447804F1A5AD3EB00BDF203 /* Bolts.framework */; };
+		A44780521A5AD44500BDF203 /* Agency.m in Sources */ = {isa = PBXBuildFile; fileRef = A44780511A5AD44500BDF203 /* Agency.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,7 +84,9 @@
 		A407FB041A56CCD000B42954 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A407FB061A56CCE500B42954 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		A407FB081A56CCF300B42954 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		A407FB0A1A56CDCD00B42954 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1.6.1/Parse.framework"; sourceTree = "<group>"; };
+		A447804D1A5AD18F00BDF203 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1.6.1/Parse.framework"; sourceTree = "<group>"; };
+		A447804F1A5AD3EB00BDF203 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "parse-library-1.6.1/Bolts.framework"; sourceTree = "<group>"; };
+		A44780511A5AD44500BDF203 /* Agency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Agency.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +94,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A407FB0B1A56CDCD00B42954 /* Parse.framework in Frameworks */,
+				A44780501A5AD3EB00BDF203 /* Bolts.framework in Frameworks */,
+				A447804E1A5AD18F00BDF203 /* Parse.framework in Frameworks */,
 				A407FB091A56CCF300B42954 /* libsqlite3.dylib in Frameworks */,
 				A407FB071A56CCE500B42954 /* libz.dylib in Frameworks */,
 				A407FB051A56CCD000B42954 /* SystemConfiguration.framework in Frameworks */,
@@ -185,9 +190,10 @@
 				A0C576FF1A52D7FD005EF46E /* User.m */,
 				A0C577001A52D7FD005EF46E /* Vehicle.h */,
 				A0C577011A52D7FD005EF46E /* Vehicle.m */,
-				A0C5770F1A533365005EF46E /* Location.m */,
 				A0C577111A533624005EF46E /* Location.h */,
+				A0C5770F1A533365005EF46E /* Location.m */,
 				A0C577121A534270005EF46E /* Agency.h */,
+				A44780511A5AD44500BDF203 /* Agency.m */,
 				A0C577131A5347DF005EF46E /* CurrentRequest.h */,
 				A0C577141A5347FF005EF46E /* CurrentRequest.m */,
 				A407FAEE1A56CAF800B42954 /* Facade.h */,
@@ -199,7 +205,8 @@
 		A407FAF11A56CB9A00B42954 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
-				A407FB0A1A56CDCD00B42954 /* Parse.framework */,
+				A447804F1A5AD3EB00BDF203 /* Bolts.framework */,
+				A447804D1A5AD18F00BDF203 /* Parse.framework */,
 				A407FB081A56CCF300B42954 /* libsqlite3.dylib */,
 				A407FB061A56CCE500B42954 /* libz.dylib */,
 				A407FB041A56CCD000B42954 /* SystemConfiguration.framework */,
@@ -324,6 +331,7 @@
 				A0C576DB1A52D553005EF46E /* AppDelegate.m in Sources */,
 				A0C576D81A52D553005EF46E /* main.m in Sources */,
 				A407FAF01A56CAF800B42954 /* Facade.m in Sources */,
+				A44780521A5AD44500BDF203 /* Agency.m in Sources */,
 				A0C577151A5347FF005EF46E /* CurrentRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
