@@ -11,8 +11,7 @@
 
 
 @interface Facade ()
-@property (nonatomic,copy) Success successBlock;
-@property (nonatomic,copy) Failure failureBlock;
+
 @end
 
 @implementation Facade
@@ -43,7 +42,7 @@
     return self;
 }
 
--(void)insertRequestDataInParse:(Success)success failure:(Failure)failure data:(Request *)requestSave
+-(void)insertRequestDataInParse:(Request *)requestSave
 {
     PFObject * request = [PFObject objectWithClassName:@"Request"];
     [request setObject:[NSNumber numberWithInt:[requestSave statusCode]] forKey:@"statusCode"];
@@ -60,7 +59,7 @@
     [request saveInBackground];
 }
 
--(void)updateRequestInParse:(Success)success failure:(Failure)failure with:(NSString *)Id data:(NSDictionary *)dataUpdate
+-(void)updateRequestInParseWith:(NSString *)Id data:(NSDictionary *)dataUpdate
 {
     //Actualizo en Parse segun la info que me llega en el diccionario y en la tabla traida por el from
     PFQuery * query = [PFQuery queryWithClassName:@"Request"];
@@ -78,7 +77,7 @@
     
 }
 
--(void)findInParse:(Success)success failure:(Failure)failure with:(NSString *)Id in:(NSString *)from
+-(void)findInParseWith:(NSString *)Id in:(NSString *)from
 {
     //busco en parse por un Id en el nsstring que llega al final del parametro
     PFQuery * query = [PFQuery queryWithClassName:from];
@@ -88,7 +87,7 @@
     
 }
 
--(void)deleteInPase:(Success)success failure:(Failure)failure with:(NSString *)Id in:(NSString *)from
+-(void)deleteInPaseWith:(NSString *)Id in:(NSString *)from
 {
     PFQuery * query =[PFQuery queryWithClassName:from];
     [query getObjectInBackgroundWithId:Id block:^(PFObject *object, NSError *error) {
