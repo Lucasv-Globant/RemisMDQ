@@ -56,7 +56,11 @@
     PFObject * vehicle =[PFObject objectWithClassName:@"Vehicle"];
     [vehicle setObject:[requestSave vehicle] forKey:@"vehicle"];
     [request setObject:vehicle forKey:@"vehicle"];
-    [request saveInBackground];
+    [request saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            NSLog(@"La operacion salio con %d",succeeded);
+        }
+    }];
 }
 
 -(void)updateRequestInParseWith:(NSString *)Id data:(NSDictionary *)dataUpdate
@@ -71,7 +75,11 @@
         object [@"ETAFromSourceLocationToDestinationLocation"] = [dataUpdate valueForKey:@"ETAFromSourceLocationToDestinationLocation"];
         object [@"user"] = [dataUpdate valueForKey:@"user"];
         object [@"vehicle"] = [dataUpdate valueForKey:@"vehicle"];
-        [object saveInBackground];
+        [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (!error) {
+                NSLog(@"La operacion salio con %d",succeeded);
+            }
+        }];
  
     }];
     
@@ -91,8 +99,13 @@
 {
     PFQuery * query =[PFQuery queryWithClassName:from];
     [query getObjectInBackgroundWithId:Id block:^(PFObject *object, NSError *error) {
-        [object deleteInBackground];
-        NSLog(@"Delete is Ok");
+        [object deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (!error) {
+                NSLog(@"La operacion salio con %d",succeeded);
+                NSLog(@"Delete is Ok");
+            }
+        }];
+        
     }];
 }
 
