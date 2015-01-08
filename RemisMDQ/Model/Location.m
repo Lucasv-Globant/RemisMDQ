@@ -37,7 +37,7 @@
 }
 
 
--(NSMutableDictionary *)outputToDictionary
+-(NSDictionary *)outputToDictionary
 {
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
     
@@ -53,7 +53,9 @@
     [dict setObject:[self country] forKey:@"country"];
     [dict setObject:[self province] forKey:@"province"];
     [dict setObject:[self zipCode] forKey:@"zipCode"];
-    return dict;
+    
+    NSDictionary *result = [[NSDictionary alloc] initWithDictionary:dict];
+    return result;
 }
 
 

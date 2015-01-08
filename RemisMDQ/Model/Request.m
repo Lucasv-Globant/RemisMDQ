@@ -62,18 +62,27 @@
     return result;
 }
 
--(instancetype)initInApplication:(Application *) app withDictionary:(NSDictionary *)dict
+-(instancetype)initInApplication:(MobileApplication *) app withDictionary:(NSDictionary *)dict
 //Initializes the instance using the dictionary and, when necessary, leveraging the container app passed as parameter to create the related objects (double dispatching)
 {
     self = [super init];
     if (self)
     {
-        [self setUser:[app getUserFromStorageOrDictionary:[dict objectForKey:@"user"]] ];
-        [self setVehicle: [[Vehicle alloc] initFromDictionary:[dict objectForKey:@"vehicle"]] ];
-        [self setAgency:[app getUserFromStorageOrDictionary:[dict objectForKey:@"agency"]] ];
+        //ObjectId and timestamps
         [self setObjectId:[dict objectForKey:@"objectId"] ];
         [self setCreated_at:[dict objectForKey:@"created_at"] ];
         [self setUpdated_at:[dict objectForKey:@"updated_at"] ];
+
+        //Asks the main application for the User instance, passing the objectId NSString as a parameter
+        [self setUser:[app getUserWithObjectId:[dict objectForKey:@"user"]] ];
+        
+        //Asks the main application for the Agency instance, passing the objectId NSString as a parameter
+        [self setAgency:[app getAgencyWithObjectId:[dict objectForKey:@"agency"]] ];
+        
+        //Asks the main application for the Vehicle instance, passing the objectId NSString as a parameter
+        [self setVehicle:[app getVehicleWithObjectId:[dict objectForKey:@"vehicle"]] ];
+
+        //Status code, locations, and ETAs:
         [self setStatusCode:[[dict objectForKey:@"statusCode"] intValue] ];
         [self setOriginLocation:[[[Location alloc] initFromDictionary:[dict objectForKey:@"originLocation"]] ] ];
         [self setDestinationLocation:[[[Location alloc] initFromDictionary:[dict objectForKey:@"destinationLocation"]] ] ];

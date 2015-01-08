@@ -8,6 +8,7 @@
 
 #import "Agency.h"
 #import "Location.h"
+#import "MobileApplication.h"
 
 @interface Vehicle : NSObject
 

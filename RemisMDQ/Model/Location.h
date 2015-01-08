@@ -23,6 +23,6 @@
 @property (nonatomic, strong) NSString *country;
 
 -(id)init;
--(NSMutableDictionary *)outputToDictionary;
+-(NSDictionary *)outputToDictionary;
 
 @end

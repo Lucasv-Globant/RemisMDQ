@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Request.h"
 #import "Vehicle.h"
 #import "User.h"
 #import "Location.h"
 #import "Agency.h"
-#import "Application.h"
+#import "MobileApplication.h"
+
+@interface Request : NSObject
 
 //RequestStatusCode enumerates the possible states of a request.
 typedef enum {
@@ -24,10 +25,10 @@ typedef enum {
               RequestStatusUserWasAbsent = 5,   // The vehicle arrived to the user's location, but he wasn't present.
               RequestStatusEnRouteToDestination = 6, // The user got into the vehicle and is on its' way to destination
               RequestStatusCompleted = 7        // The vehicle arrived to destination.
-             } RequestStatusCode;
+             }  RequestStatusCode;
 
 
-@interface Request : NSObject
+
 
 @property (nonatomic, strong) NSString *objectId;
 @property (nonatomic, strong) NSDate *created_at;

@@ -46,6 +46,30 @@
     return dict;
 }
 
+-(instancetype)initInApplication:(MobileApplication *) app fromDictionary:(NSDictionary *) aDictionary
+{
+    self = [super init];
+    if (self)
+    {
+        [self setObjectId:[aDictionary objectForKey:@"objectId"]];
+        [self setCreated_at:[aDictionary objectForKey:@"created_at"]];
+        [self setUpdated_at:[aDictionary objectForKey:@"updated_at"]];
+        
+        //Set the agency, asking the main application for it
+        [self setAgency:[app getAgency:[aDictionary objectForKey:@"agency"] ]];
+        
+        //License plate and location:
+        [self setLicensePlate:[aDictionary objectForKey:@"licensePlate"] ];
+        [self setLastKnownLocation:[[Location alloc] initFromDictionary:[aDictionary objectForKey:@"lastKnownLocation"]] ];
+        
+        //The int code for the vehicle's model:
+        [self setModel:[[aDictionary objectForKey:@"model"] intValue ] ];
+        //The int code for the vehicle's color:
+        [self setModel:[[aDictionary objectForKey:@"color"] intValue ] ];
+        
+    }
+    return self;
+}
 
 
 -(void)saveToLocalStorage
