@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A0883C0A1A5DA90C009702EE /* Application.m in Sources */ = {isa = PBXBuildFile; fileRef = A0883C091A5DA90C009702EE /* Application.m */; };
 		A0C576D81A52D553005EF46E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C576D71A52D553005EF46E /* main.m */; };
 		A0C576DB1A52D553005EF46E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C576DA1A52D553005EF46E /* AppDelegate.m */; };
 		A0C576DE1A52D553005EF46E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C576DD1A52D553005EF46E /* ViewController.m */; };
@@ -47,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A0883C081A5DA4F1009702EE /* Application.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
+		A0883C091A5DA90C009702EE /* Application.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Application.m; sourceTree = "<group>"; };
 		A0C576D21A52D553005EF46E /* RemisMDQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemisMDQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0C576D61A52D553005EF46E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0C576D71A52D553005EF46E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -198,6 +201,8 @@
 				A0C577141A5347FF005EF46E /* CurrentRequest.m */,
 				A407FAEE1A56CAF800B42954 /* Facade.h */,
 				A407FAEF1A56CAF800B42954 /* Facade.m */,
+				A0883C081A5DA4F1009702EE /* Application.h */,
+				A0883C091A5DA90C009702EE /* Application.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -329,6 +334,7 @@
 				A0C577041A52D7FD005EF46E /* Vehicle.m in Sources */,
 				A0C577021A52D7FD005EF46E /* Request.m in Sources */,
 				A0C576DB1A52D553005EF46E /* AppDelegate.m in Sources */,
+				A0883C0A1A5DA90C009702EE /* Application.m in Sources */,
 				A0C576D81A52D553005EF46E /* main.m in Sources */,
 				A407FAF01A56CAF800B42954 /* Facade.m in Sources */,
 				A44780521A5AD44500BDF203 /* Agency.m in Sources */,

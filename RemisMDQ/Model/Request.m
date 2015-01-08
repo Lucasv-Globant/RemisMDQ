@@ -41,7 +41,7 @@
 }
 
 
--(NSMutableDictionary *)outputToDictionary
+-(NSDictionary *)outputToDictionary
 {
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
     
@@ -58,7 +58,69 @@
     [dict setObject:[self ETAToSourceLocation] forKey:@"ETAToSourceLocation"];
     [dict setObject:[self ETAFromSourceLocationToDestinationLocation] forKey:@"ETAFromSourceLocationToDestinationLocation"];
     
-    return dict;
+    NSDictionary *result = [[NSDictionary alloc] initWithDictionary:dict];
+    return result;
+}
+
+-(instancetype)initInApplication:(Application *) app withDictionary:(NSDictionary *)dict
+//Initializes the instance using the dictionary and, when necessary, leveraging the container app passed as parameter to create the related objects (double dispatching)
+{
+    self = [super init];
+    if (self)
+    {
+        [self setUser:[app getUserFromStorageOrDictionary:[dict objectForKey:@"user"]] ];
+        [self setVehicle: [[Vehicle alloc] initFromDictionary:[dict objectForKey:@"vehicle"]] ];
+        [self setAgency:[app getUserFromStorageOrDictionary:[dict objectForKey:@"agency"]] ];
+        [self setObjectId:[dict objectForKey:@"objectId"] ];
+        [self setCreated_at:[dict objectForKey:@"created_at"] ];
+        [self setUpdated_at:[dict objectForKey:@"updated_at"] ];
+        [self setStatusCode:[[dict objectForKey:@"statusCode"] intValue] ];
+        [self setOriginLocation:[[[Location alloc] initFromDictionary:[dict objectForKey:@"originLocation"]] ] ];
+        [self setDestinationLocation:[[[Location alloc] initFromDictionary:[dict objectForKey:@"destinationLocation"]] ] ];
+        [self setETAToSourceLocation:[dict objectForKey:@"ETAToSourceLocation"] ];
+        [self setETAFromSourceLocationToDestinationLocation:[dict objectForKey:@"ETAFromSourceLocationToDestinationLocation"] ];
+    }
+    return self;
 }
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

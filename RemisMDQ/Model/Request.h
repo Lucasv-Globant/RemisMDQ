@@ -12,6 +12,7 @@
 #import "User.h"
 #import "Location.h"
 #import "Agency.h"
+#import "Application.h"
 
 //RequestStatusCode enumerates the possible states of a request.
 typedef enum {
@@ -32,7 +33,7 @@ typedef enum {
 @property (nonatomic, strong) NSDate *created_at;
 @property (nonatomic, strong) NSDate *updated_at;
 
-@property (nonatomic,strong) User *user;
+@property (nonatomic, strong) User *user;
 @property (nonatomic, strong) Vehicle *vehicle;
 @property (nonatomic, strong) Agency *agency;
 
@@ -43,6 +44,6 @@ typedef enum {
 @property (nonatomic, strong) NSNumber *ETAFromSourceLocationToDestinationLocation; //expressed in minutes, when available
 
 -(id)init;
--(NSMutableDictionary *)outputToDictionary;
+-(NSDictionary *)outputToDictionary;
 
 @end

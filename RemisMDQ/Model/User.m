@@ -27,7 +27,7 @@
     return self;
 }
 
--(NSMutableDictionary *)outputToDictionary
+-(NSDictionary *)outputToDictionary
 {
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
     [dict setObject:[self phoneNumber] forKey:@"phoneNumber"];
@@ -39,8 +39,8 @@
     }
     
     [dict setObject:favorites forKey:@"favoriteLocations"];
-    
-    return dict;
+    NSDictionary *result = [[NSDictionary alloc] initWithDictionary:dict];
+    return result;
 }
 
 @end
