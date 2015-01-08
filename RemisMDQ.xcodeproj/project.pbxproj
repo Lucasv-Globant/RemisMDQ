@@ -34,6 +34,7 @@
 		A44780521A5AD44500BDF203 /* Agency.m in Sources */ = {isa = PBXBuildFile; fileRef = A44780511A5AD44500BDF203 /* Agency.m */; };
 		A457D5CC1A5EB34A00CBA6B3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A457D5CA1A5EB34A00CBA6B3 /* ViewController.m */; };
 		A457D5CD1A5EB34A00CBA6B3 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A457D5CB1A5EB34A00CBA6B3 /* ViewController.xib */; };
+		A457D5D01A5ED7E300CBA6B3 /* NSString+CustonString.m in Sources */ = {isa = PBXBuildFile; fileRef = A457D5CF1A5ED7E300CBA6B3 /* NSString+CustonString.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,8 @@
 		A457D5C91A5EB34A00CBA6B3 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A457D5CA1A5EB34A00CBA6B3 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A457D5CB1A5EB34A00CBA6B3 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		A457D5CE1A5ED7E300CBA6B3 /* NSString+CustonString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CustonString.h"; sourceTree = "<group>"; };
+		A457D5CF1A5ED7E300CBA6B3 /* NSString+CustonString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CustonString.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +187,8 @@
 		A0C576FB1A52D7FD005EF46E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A457D5CE1A5ED7E300CBA6B3 /* NSString+CustonString.h */,
+				A457D5CF1A5ED7E300CBA6B3 /* NSString+CustonString.m */,
 				A0C576FC1A52D7FD005EF46E /* Request.h */,
 				A0C576FD1A52D7FD005EF46E /* Request.m */,
 				A0C576FE1A52D7FD005EF46E /* User.h */,
@@ -323,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A457D5D01A5ED7E300CBA6B3 /* NSString+CustonString.m in Sources */,
 				A0C577031A52D7FD005EF46E /* User.m in Sources */,
 				A0C577101A533365005EF46E /* Location.m in Sources */,
 				A0C577041A52D7FD005EF46E /* Vehicle.m in Sources */,
