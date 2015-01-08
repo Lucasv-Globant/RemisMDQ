@@ -80,7 +80,6 @@
                 NSLog(@"La operacion salio con %d",succeeded);
             }
         }];
- 
     }];
 }
 
@@ -101,9 +100,7 @@
             // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
-        
      }];
-    
 }
 
 -(void)deleteInPaseWith:(NSString *)Id in:(NSString *)from

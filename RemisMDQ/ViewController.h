@@ -2,14 +2,12 @@
 //  ViewController.h
 //  RemisMDQ
 //
-//  Created by Lucas on 12/30/14.
-//  Copyright (c) 2014 Globant iOS MDQ. All rights reserved.
+//  Created by Analia on 1/8/15.
+//  Copyright (c) 2015 Globant iOS MDQ. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ViewController : UIViewController 
 
 @end
-
