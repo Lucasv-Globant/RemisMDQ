@@ -84,8 +84,8 @@
 
         //Status code, locations, and ETAs:
         [self setStatusCode:[[dict objectForKey:@"statusCode"] intValue] ];
-        [self setOriginLocation:[[[Location alloc] initFromDictionary:[dict objectForKey:@"originLocation"]] ] ];
-        [self setDestinationLocation:[[[Location alloc] initFromDictionary:[dict objectForKey:@"destinationLocation"]] ] ];
+        [self setOriginLocation:[[Location alloc]initFromDictionary:[dict objectForKey:@"originLocation"]]];
+        [self setDestinationLocation:[[Location alloc]initFromDictionary:[dict objectForKey:@"destinationLocation"]]];
         [self setETAToSourceLocation:[dict objectForKey:@"ETAToSourceLocation"] ];
         [self setETAFromSourceLocationToDestinationLocation:[dict objectForKey:@"ETAFromSourceLocationToDestinationLocation"] ];
     }

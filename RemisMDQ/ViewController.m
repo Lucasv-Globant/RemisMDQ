@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import <Parse/Parse.h>
 #import "Vehicle.h"
+#import "NSString+CustonString.h"
+
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *labelAgencia;
@@ -59,9 +61,21 @@
 
 
 - (IBAction)addVehicle:(id)sender {
+    NSString * licencia = [[NSString alloc]initWithString:self.textFieldLicense.text];
+    NSString * nameagency = [[NSString alloc] initWithString:self.textFieldname.text];
+    
+    if ([[self.textFieldLicense text] EsVacio] && [[self.textFieldname text] EsVacio] ) {
+        UIAlertView * alerta = [[UIAlertView alloc] initWithTitle:@"Error" message:@"No ingresaste ninguna campo" delegate:nil cancelButtonTitle:@"Aceptar" otherButtonTitles:@"Cancelar", nil];
+        [alerta show];
+    }
     PFObject * vehicle =[PFObject objectWithClassName:@"vechicle"];
     [vehicle setObject:[NSString stringWithFormat:@"%ld",(long)self.selectedSegmentModel]forKey:@"model"];
     [vehicle setObject:[NSString stringWithFormat:@"%ld",(long)self.selectedSegmentColor] forKey:@"color"];
+    [vehicle setObject:licencia forKey:@"licensePlate"];
+    PFObject * agency = [PFObject objectWithClassName:@"agency"];
+    [agency setObject:nameagency forKey:@"name"];
+    [vehicle setObject:agency forKey:@"agency"];
+    
 }
 
 - (void)didReceiveMemoryWarning {

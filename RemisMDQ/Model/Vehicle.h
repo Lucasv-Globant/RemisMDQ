@@ -38,7 +38,7 @@ typedef enum {
 @property VehicleModel model;
 @property VehicleColor color;
 @property (nonatomic,strong) NSString *licensePlate;
-@property (nonatomic, strong) Agency *agency;
+@property (nonatomic, strong) Agency * agency;
 @property (nonatomic, strong) Location *lastKnownLocation;
 
 -(id)init;

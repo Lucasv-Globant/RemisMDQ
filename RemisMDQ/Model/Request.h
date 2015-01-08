@@ -13,6 +13,8 @@
 #import "Agency.h"
 #import "MobileApplication.h"
 
+@class Vehicle;
+@class User;
 @interface Request : NSObject
 
 //RequestStatusCode enumerates the possible states of a request.

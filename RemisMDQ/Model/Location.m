@@ -58,7 +58,15 @@
     return result;
 }
 
-
+-(id)initFromDictionary:(NSDictionary *)dic
+{
+    self = [super init];
+    if (self)
+    {
+        
+    }
+    return self;
+}
 
 
 @end

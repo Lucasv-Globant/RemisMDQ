@@ -10,7 +10,8 @@
 #import "Facade.h"
 #import "Vehicle.h"
 
-
+@class Vehicle;
+@class Request;
 @interface MobileApplication : NSObject
 
 //Since this is a mobile application, we store the request, agency, vehicle directly as properties for simpler saving/recovery

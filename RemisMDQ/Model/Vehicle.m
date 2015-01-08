@@ -56,7 +56,7 @@
         [self setUpdated_at:[aDictionary objectForKey:@"updated_at"]];
         
         //Set the agency, asking the main application for it
-        [self setAgency:[app getAgency:[aDictionary objectForKey:@"agency"] ]];
+        [self setAgency:[app getAgencyWithObjectId:[aDictionary objectForKey:@"agency"] ]];
         
         //License plate and location:
         [self setLicensePlate:[aDictionary objectForKey:@"licensePlate"] ];
