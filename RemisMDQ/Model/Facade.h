@@ -16,7 +16,7 @@
 
 #pragma mark - Method
 -(void)insertRequestDataInParse:(Request *)requestSave;
--(void)findInParseWith:(NSString *)Id in:(NSString *)from;
+-(void)findInParseWith:(NSString *)whereKey value:(NSString *)value in:(NSString *)from;
 -(void)updateRequestInParseWith:(NSString *)Id data:(NSDictionary *)dataUpdate;
 -(void)deleteInPaseWith:(NSString *)Id in:(NSString *)from;
 
