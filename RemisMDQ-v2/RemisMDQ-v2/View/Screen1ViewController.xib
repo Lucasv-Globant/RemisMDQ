@@ -6,6 +6,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Screen1ViewController">
             <connections>
+                <outlet property="buttonAddAgency" destination="QiL-yP-Co8" id="TP6-1n-TrL"/>
+                <outlet property="buttonAddVehicle" destination="qdf-oc-Xan" id="3LL-hg-txL"/>
+                <outlet property="segmentedColor" destination="vFl-49-pSQ" id="ShS-Ml-FUg"/>
+                <outlet property="segmentedModel" destination="ABM-YV-bWx" id="EXh-nF-lCL"/>
+                <outlet property="textFieldLicense" destination="KjD-8k-Eqd" id="2PQ-cP-W0J"/>
+                <outlet property="textFieldNameAgency" destination="JH3-U5-7tb" id="Wn8-b3-fei"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -40,6 +46,9 @@
                         <segment title="C4"/>
                         <segment title="Siena"/>
                     </segments>
+                    <connections>
+                        <action selector="segmentModel:" destination="-1" eventType="valueChanged" id="WhY-mK-dEx"/>
+                    </connections>
                 </segmentedControl>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vFl-49-pSQ">
                     <rect key="frame" x="16" y="330" width="278" height="29"/>
@@ -51,6 +60,9 @@
                         <segment title="Red"/>
                         <segment title="Blue"/>
                     </segments>
+                    <connections>
+                        <action selector="segmentColor:" destination="-1" eventType="valueChanged" id="5C7-Cp-N6x"/>
+                    </connections>
                 </segmentedControl>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="licencia" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KjD-8k-Eqd">
                     <rect key="frame" x="16" y="386" width="278" height="30"/>
@@ -62,12 +74,18 @@
                     <state key="normal" title="Agregar">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="AddVehicle:" destination="-1" eventType="touchUpInside" id="qaS-4b-TrH"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QiL-yP-Co8">
-                    <rect key="frame" x="177" y="497" width="117" height="30"/>
+                    <rect key="frame" x="177" y="500" width="117" height="30"/>
                     <state key="normal" title="Finalizar Agencia">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="addAgency:" destination="-1" eventType="touchUpInside" id="2Vv-ON-cWu"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

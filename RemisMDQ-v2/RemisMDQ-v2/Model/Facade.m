@@ -83,9 +83,10 @@
     }];
 }
 
--(void)findInParseWith:(NSString *)whereKey value:(NSString *)value in:(NSString *)from
+-(NSDictionary *)findInParseWith:(NSString *)whereKey value:(NSString *)value in:(NSString *)from
 {
     //busco en parse por un Id en el nsstring que llega al final del parametro
+    NSDictionary *dic = [[NSDictionary alloc] init];
     PFQuery * query = [PFQuery queryWithClassName:from];
     [query  whereKey:whereKey equalTo:value];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -95,12 +96,14 @@
             // Do something with the found objects
             for (PFObject *object in objects) {
                 NSLog(@"%@", object.objectId);
+                [dic objectForKey:objects];
             }
         } else {
             // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
      }];
+    return dic;
 }
 
 -(void)deleteInPaseWith:(NSString *)Id in:(NSString *)from

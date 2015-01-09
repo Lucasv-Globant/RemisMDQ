@@ -15,8 +15,9 @@
 + (id)sharedInstance;
 
 #pragma mark - Method
+-(instancetype)initWithParse;
 -(void)insertRequestDataInParse:(Request *)requestSave;
--(void)findInParseWith:(NSString *)whereKey value:(NSString *)value in:(NSString *)from;
+-(NSDictionary *)findInParseWith:(NSString *)whereKey value:(NSString *)value in:(NSString *)from;
 -(void)updateRequestInParseWith:(NSString *)Id data:(NSDictionary *)dataUpdate;
 -(void)deleteInPaseWith:(NSString *)Id in:(NSString *)from;
 
