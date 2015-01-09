@@ -1,13 +1,12 @@
 //
 //  AppDelegate.m
-//  RemisMDQ
+//  RemisMDQ-v2
 //
-//  Created by Lucas on 12/30/14.
-//  Copyright (c) 2014 Globant iOS MDQ. All rights reserved.
+//  Created by Lucas on 1/9/15.
+//  Copyright (c) 2015 Globant iOS MDQ. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import "ViewControllerAgency.h"
 
 @interface AppDelegate ()
 
@@ -18,11 +17,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-
-    self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
-    
-    ViewControllerAgency * controler =[[ViewControllerAgency alloc] initWithNibName:@"ViewControllerAgency" bundle:nil];
-    self.window.rootViewController =  [[UINavigationController alloc]initWithRootViewController:controler];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    Screen1ViewController *start = [[Screen1ViewController alloc] initWithNibName:@"Screen1ViewController" bundle:nil];
+    [self.window setRootViewController:start];
+    [self.window makeKeyAndVisible];
     
     return YES;
 }

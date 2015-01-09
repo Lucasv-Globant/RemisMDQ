@@ -23,6 +23,7 @@
 
 
 
+
 @property (assign, nonatomic)   NSInteger selectedSegmentModel ;
 @property (assign, nonatomic)   NSInteger selectedSegmentColor ;
 
