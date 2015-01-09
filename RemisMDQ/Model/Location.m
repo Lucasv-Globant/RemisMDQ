@@ -38,6 +38,7 @@
 
 
 -(NSDictionary *)outputToDictionary
+//Dumps all the instance variables into a Dictionary object, returning it as a result.
 {
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
     
@@ -60,11 +61,24 @@
 
 
 -(instancetype)initFromDictionary:(NSDictionary *)aDictionary
+//Initializes the instance variables with the values contained in aDictionary
 {
     self = [super init];
     if (self)
     {
-
+        [self setObjectId:[aDictionary objectForKey:@"objectId"]];
+        [self setCreated_at:[aDictionary objectForKey:@"created_at"]];
+        [self setUpdated_at:[aDictionary objectForKey:@"updated_at"]];
+        [self setLatitude:[aDictionary objectForKey:@"latitude"]];
+        [self setLongitude:[aDictionary objectForKey:@"longitude"]];
+        [self setStreet:[aDictionary objectForKey:@"street"]];
+        [self setHouseNumbering:[aDictionary objectForKey:@"houseNumbering"]];
+        [self setHouseDetails:[aDictionary objectForKey:@"houseDetails"]];
+        [self setCity:[aDictionary objectForKey:@"city"]];
+        [self setCountry:[aDictionary objectForKey:@"country"]];
+        [self setProvince:[aDictionary objectForKey:@"province"]];
+        [self setZipCode:[aDictionary objectForKey:@"zipCode"]];
+        
         
     }
     return self;
