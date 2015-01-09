@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "ViewControllerAgency.h"
 
 @interface AppDelegate ()
 
@@ -21,7 +21,7 @@
     
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
     
-    ViewController * controler =[[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    ViewControllerAgency * controler =[[ViewControllerAgency alloc] initWithNibName:@"ViewControllerAgency" bundle:nil];
     self.window.rootViewController =  [[UINavigationController alloc]initWithRootViewController:controler];
     
     return YES;

@@ -6,29 +6,30 @@
 //  Copyright (c) 2015 Globant iOS MDQ. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ViewControllerAgency.h"
 #import <Parse/Parse.h>
 #import "Vehicle.h"
 #import "NSString+CustonString.h"
 
 
-@interface ViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *labelAgencia;
-@property (weak, nonatomic) IBOutlet UITextField *textFieldname;
-@property (weak, nonatomic) IBOutlet UILabel *labelAuto;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedModelo;
+@interface ViewControllerAgency ()
+
+@property (weak, nonatomic) IBOutlet UITextField *textFieldNameAgency;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedModel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedColor;
-@property (weak, nonatomic) IBOutlet UITableView *tableAgencia;
-@property (weak, nonatomic) IBOutlet UIButton *buttonFinalizar;
-@property (weak, nonatomic) IBOutlet UIButton *buttonAgregar;
+@property (weak, nonatomic) IBOutlet UITextField *textFieldLicense;
+@property (weak, nonatomic) IBOutlet UIButton *buttonAddVehicle;
+@property (weak, nonatomic) IBOutlet UIButton *buttonAddAgency;
+
+
 
 @property (assign, nonatomic)   NSInteger selectedSegmentModel ;
-@property (weak, nonatomic) IBOutlet UITextField *textFieldLicense;
-
 @property (assign, nonatomic)   NSInteger selectedSegmentColor ;
+
+
 @end
 
-@implementation ViewController
+@implementation ViewControllerAgency
 
 //Sacar el teclado cuanto apretas Return o cualquier parte de la pantalla
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -62,9 +63,9 @@
 
 - (IBAction)addVehicle:(id)sender {
     NSString * licencia = [[NSString alloc]initWithString:self.textFieldLicense.text];
-    NSString * nameagency = [[NSString alloc] initWithString:self.textFieldname.text];
+    NSString * nameagency = [[NSString alloc] initWithString:self.textFieldNameAgency.text];
     
-    if ([[self.textFieldLicense text] EsVacio] && [[self.textFieldname text] EsVacio] ) {
+    if ([[self.textFieldLicense text] EsVacio] && [[self.textFieldNameAgency text] EsVacio] ) {
         UIAlertView * alerta = [[UIAlertView alloc] initWithTitle:@"Error" message:@"No ingresaste ninguna campo" delegate:nil cancelButtonTitle:@"Aceptar" otherButtonTitles:@"Cancelar", nil];
         [alerta show];
     }

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewControllerAgency">
+            <connections>
+                <outlet property="buttonAddAgency" destination="0KQ-DB-VT3" id="kBF-iT-VY2"/>
+                <outlet property="buttonAddVehicle" destination="4CS-6q-0tF" id="kPB-pP-t19"/>
+                <outlet property="segmentedColor" destination="RxN-0v-gb3" id="mGc-cJ-5O7"/>
+                <outlet property="segmentedModel" destination="0bk-R1-ltw" id="OeQ-5Z-sWU"/>
+                <outlet property="textFieldLicense" destination="8ti-PK-wka" id="zFd-Cx-8zR"/>
+                <outlet property="textFieldNameAgency" destination="HkH-N2-saX" id="Mv8-kb-Dei"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="htv-pI-zY5"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="nombre" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HkH-N2-saX">
+                    <rect key="frame" x="25" y="111" width="307" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Agregar Agencia" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLK-Ox-G48">
+                    <rect key="frame" x="25" y="69" width="127" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Agregar auto a la agencia" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8S-So-8se">
+                    <rect key="frame" x="25" y="210" width="196" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0bk-R1-ltw">
+                    <rect key="frame" x="25" y="271" width="319" height="29"/>
+                    <segments>
+                        <segment title="Corsa"/>
+                        <segment title="Megane"/>
+                        <segment title="Logan"/>
+                        <segment title="C4"/>
+                        <segment title="Siena"/>
+                    </segments>
+                    <connections>
+                        <action selector="segmentModel:" destination="-1" eventType="valueChanged" id="hwQ-l3-jyh"/>
+                    </connections>
+                </segmentedControl>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RxN-0v-gb3">
+                    <rect key="frame" x="25" y="328" width="319" height="29"/>
+                    <segments>
+                        <segment title="Gray"/>
+                        <segment title="Silver"/>
+                        <segment title="White"/>
+                        <segment title="Black"/>
+                        <segment title="Red"/>
+                        <segment title="Blue"/>
+                    </segments>
+                    <connections>
+                        <action selector="segmentColor:" destination="-1" eventType="valueChanged" id="7yu-mX-ATF"/>
+                    </connections>
+                </segmentedControl>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0KQ-DB-VT3">
+                    <rect key="frame" x="233" y="492" width="117" height="30"/>
+                    <state key="normal" title="Finalizar Agencia">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="licencia" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ti-PK-wka">
+                    <rect key="frame" x="25" y="379" width="307" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4CS-6q-0tF">
+                    <rect key="frame" x="290" y="423" width="54" height="30"/>
+                    <state key="normal" title="Agregar">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="addVehicle:" destination="-1" eventType="touchUpInside" id="VOr-s9-ixL"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+        </view>
+    </objects>
+</document>
