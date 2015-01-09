@@ -39,7 +39,6 @@ typedef enum {
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) Vehicle *vehicle;
 @property (nonatomic, strong) Agency *agency;
-
 @property RequestStatusCode statusCode;
 @property (nonatomic, strong) Location *originLocation;
 @property (nonatomic, strong) Location *destinationLocation;

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Vehicle.h"
 
+@class Vehicle;
 @interface Vehicle ()
 @end
 

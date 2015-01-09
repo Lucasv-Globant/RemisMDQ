@@ -58,15 +58,19 @@
     return result;
 }
 
--(id)initFromDictionary:(NSDictionary *)dic
+
+-(instancetype)initFromDictionary:(NSDictionary *)aDictionary
 {
     self = [super init];
     if (self)
     {
+
         
     }
     return self;
 }
+
+
 
 
 @end

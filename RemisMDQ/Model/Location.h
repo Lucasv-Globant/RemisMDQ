@@ -24,6 +24,8 @@
 
 -(id)init;
 -(NSDictionary *)outputToDictionary;
--(id)initFromDictionary:(NSDictionary *)dic;
+
+-(instancetype)initFromDictionary:(NSDictionary *)aDictionary;
+
 
 @end
