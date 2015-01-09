@@ -25,26 +25,83 @@
     
     // executes a block object once and only once for the lifetime of an application
     dispatch_once(&p, ^{
-        _sharedObject = [[self alloc] init];
+        _sharedObject = [[self alloc] initFromPersistentStorage];
     });
     
     // returns the same object each time
     return _sharedObject;
 }
 
--(User *)getUserWithObjectId:(NSString *)objectId
+
+#pragma mark -String Keys for NSUserDefaults
+//The string used as a key for NSUserDefaults. Object: currentUser
+-(NSString *)stringCodeForCurrentUser
 {
-    if ( [[[self user] objectId] isEqualToString:objectId] )
-    {
-        return [self user];
-    }
-    else
-    {
-        return nil;
-    }
+    return @"currentUser";
+}
+
+//The string used as a key for NSUserDefaults. Object: currentRequest
+-(NSString *)stringCodeForCurrentRequest
+{
+    return @"currentRequest";
+}
+
+//The string used as a key for NSUserDefaults. Object: vehicleOfCurrentRequest
+-(NSString *)stringCodeForVehicleOfCurrentRequest
+{
+    return @"vehicleOfCurrentRequest";
 }
 
 
+#pragma mark -Persistence
+-(instancetype)initFromPersistentStorage
+{
+    //Loads the context data from NSUserDefaults
+    self = [super init];
+    if (self)
+    {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSDictionary *userDictionary = [defaults dictionaryForKey:[self stringCodeForCurrentUser]];
+        NSDictionary *currentRequestDictionary = [defaults dictionaryForKey:[self stringCodeForCurrentRequest]];
+        NSDictionary *vehicleOfCurrentRequestDictionary = [defaults dictionaryForKey:[self stringCodeForVehicleOfCurrentRequest]];
+        
+        if (userDictionary != nil)
+        {
+            [self setUser:[[User alloc] initFromDictionary:userDictionary]];
+            [self setCurrentRequest:[Request alloc] initFromDictionary:currentRequestDictionary];
+            [self setVehicleOfCurrentRequest:[Vehicle alloc] initFromDictionary:vehicleOfCurrentRequestDictionary];
+        }
+    }
+    return self;
+}
+
+-(void)saveToPersistentStorage
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:[self currentUserOutputToDictionary] forKey:[self stringCodeForCurrentUser]];
+    [defaults setObject:[self currentRequestOutputToDictionary] forKey:[self stringCodeForCurrentRequest]];
+    [defaults setObject:[self vehicleOfCurrentRequestOutputToDictionary] forKey:[self stringCodeForVehicleOfCurrentRequest]];
+    [defaults synchronize];
+}
+
+
+-(NSDictionary *)currentUserOutputToDictionary
+{
+    return [[self user] outputToDictionary];
+}
+
+-(NSDictionary *)currentRequestOutputToDictionary
+{
+    return [[self currentRequest] outputToDictionary];
+}
+
+-(NSDictionary *)vehicleOfCurrentRequestOutputToDictionary
+{
+    return [[self vehicleOfCurrentRequest] outputToDictionary];
+}
+
+
+#pragma mark -Getters for internal objects by ID
 -(Agency *)getAgencyWithObjectId:(NSString *)objectId
 {
     //Since this is a mobile application, it only has one agency (which is the agency of the current request)
@@ -73,5 +130,16 @@
     }
 }
 
+-(User *)getUserWithObjectId:(NSString *)objectId
+{
+    if ( [[[self user] objectId] isEqualToString:objectId] )
+    {
+        return [self user];
+    }
+    else
+    {
+        return nil;
+    }
+}
 
 @end

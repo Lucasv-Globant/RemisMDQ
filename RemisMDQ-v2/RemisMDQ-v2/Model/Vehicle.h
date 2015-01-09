@@ -42,5 +42,5 @@ typedef enum {
 @property (nonatomic, strong) Location *lastKnownLocation;
 
 -(id)init;
-
+-(NSDictionary *)outputToDictionary;
 @end

@@ -18,6 +18,8 @@
 @property (nonatomic, strong) NSMutableArray *favoriteLocations; //An array of locations saved as "favorite"
 
 -(id)init;
+-(NSDictionary *)outputToDictionary;
+-(instancetype)initFromDictionary:(NSDictionary *)aDictionary;
 
 @end
 

@@ -32,19 +32,23 @@
 }
 
 
--(NSMutableDictionary *)outputToDictionary
+-(NSDictionary *)outputToDictionary
 {
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+    //Object ID and time stamps:
     [dict setObject:[self objectId] forKey:@"objectId"];
     [dict setObject:[self created_at] forKey:@"created_at"];
     [dict setObject:[self updated_at] forKey:@"updated_at"];
     
+    //Instance variables specific for this class:
     [dict setObject:[[self agency] objectId] forKey:@"agency"];
     [dict setObject:[self licensePlate] forKey: @"licensePlate"];
     [dict setObject:[self lastKnownLocation] forKey:@"lastKnownLocation"];
     [dict setObject:[NSNumber numberWithInt:[self model]] forKey:@"model"];
     [dict setObject:[NSNumber numberWithInt:[self color]] forKey:@"color"];
-    return dict;
+    
+    NSDictionary *result = [[NSDictionary alloc] initWithDictionary:dict];
+    return result;
 }
 
 -(instancetype)initInApplication:(MobileApplication *) app fromDictionary:(NSDictionary *) aDictionary
@@ -55,14 +59,11 @@
         [self setObjectId:[aDictionary objectForKey:@"objectId"]];
         [self setCreated_at:[aDictionary objectForKey:@"created_at"]];
         [self setUpdated_at:[aDictionary objectForKey:@"updated_at"]];
-        
-        //Set the agency, asking the main application for it
+        //Set the agency, asking the main application for it:
         [self setAgency:[app getAgencyWithObjectId:[aDictionary objectForKey:@"agency"] ]];
-        
         //License plate and location:
         [self setLicensePlate:[aDictionary objectForKey:@"licensePlate"] ];
-        [self setLastKnownLocation:[[Location alloc] initFromDictionary:[aDictionary objectForKey:@"lastKnownLocation"]] ];
-        
+        [self setLastKnownLocation:[[Location alloc] initFromDictionary:[aDictionary objectForKey:@"lastKnownLocation"]] ];        
         //The int code for the vehicle's model:
         [self setModel:[[aDictionary objectForKey:@"model"] intValue ] ];
         //The int code for the vehicle's color:

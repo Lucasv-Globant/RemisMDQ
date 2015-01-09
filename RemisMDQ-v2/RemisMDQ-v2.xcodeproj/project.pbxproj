@@ -15,7 +15,6 @@
 		A0C59EF51A604749002A2F89 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0C59EF31A604749002A2F89 /* LaunchScreen.xib */; };
 		A0C59F011A60474A002A2F89 /* RemisMDQ_v2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C59F001A60474A002A2F89 /* RemisMDQ_v2Tests.m */; };
 		A0C59F221A604C79002A2F89 /* Agency.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C59F111A604C79002A2F89 /* Agency.m */; };
-		A0C59F231A604C79002A2F89 /* CurrentRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C59F131A604C79002A2F89 /* CurrentRequest.m */; };
 		A0C59F241A604C79002A2F89 /* Facade.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C59F151A604C79002A2F89 /* Facade.m */; };
 		A0C59F251A604C79002A2F89 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C59F171A604C79002A2F89 /* Location.m */; };
 		A0C59F261A604C79002A2F89 /* MobileApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C59F191A604C79002A2F89 /* MobileApplication.m */; };
@@ -70,8 +69,6 @@
 		A0C59F001A60474A002A2F89 /* RemisMDQ_v2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemisMDQ_v2Tests.m; sourceTree = "<group>"; };
 		A0C59F101A604C79002A2F89 /* Agency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Agency.h; sourceTree = "<group>"; };
 		A0C59F111A604C79002A2F89 /* Agency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Agency.m; sourceTree = "<group>"; };
-		A0C59F121A604C79002A2F89 /* CurrentRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentRequest.h; sourceTree = "<group>"; };
-		A0C59F131A604C79002A2F89 /* CurrentRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentRequest.m; sourceTree = "<group>"; };
 		A0C59F141A604C79002A2F89 /* Facade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facade.h; sourceTree = "<group>"; };
 		A0C59F151A604C79002A2F89 /* Facade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Facade.m; sourceTree = "<group>"; };
 		A0C59F161A604C79002A2F89 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
@@ -206,8 +203,6 @@
 			children = (
 				A0C59F101A604C79002A2F89 /* Agency.h */,
 				A0C59F111A604C79002A2F89 /* Agency.m */,
-				A0C59F121A604C79002A2F89 /* CurrentRequest.h */,
-				A0C59F131A604C79002A2F89 /* CurrentRequest.m */,
 				A0C59F141A604C79002A2F89 /* Facade.h */,
 				A0C59F151A604C79002A2F89 /* Facade.m */,
 				A0C59F161A604C79002A2F89 /* Location.h */,
@@ -384,7 +379,6 @@
 				A0C59F281A604C79002A2F89 /* Request.m in Sources */,
 				A0C59F261A604C79002A2F89 /* MobileApplication.m in Sources */,
 				A0C59EED1A604749002A2F89 /* ViewController.m in Sources */,
-				A0C59F231A604C79002A2F89 /* CurrentRequest.m in Sources */,
 				A0C59EEA1A604749002A2F89 /* AppDelegate.m in Sources */,
 				A0C59F221A604C79002A2F89 /* Agency.m in Sources */,
 				A0C59F2A1A604C79002A2F89 /* Vehicle.m in Sources */,

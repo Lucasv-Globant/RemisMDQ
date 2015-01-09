@@ -31,7 +31,6 @@
 
 + (id)sharedInstance;
 
-
 // As of the first version, the MobileApplication contains only one instance of each (user, request, vehicle), but
 // the syntax for getters "get(...)WithObjectId:" is intended for reusability and future scalability.
 -(User *)getUserWithObjectId:(NSString *)objectId;
