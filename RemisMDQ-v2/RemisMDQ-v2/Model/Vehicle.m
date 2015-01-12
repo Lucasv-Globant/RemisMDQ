@@ -51,7 +51,7 @@
     return result;
 }
 
--(instancetype)initInApplication:(MobileApplication *) app fromDictionary:(NSDictionary *) aDictionary
+-(id)initInApplication:(MobileApplication *) app withDictionary:(NSDictionary *) aDictionary
 {
     self = [super init];
     if (self)
@@ -68,7 +68,6 @@
         [self setModel:[[aDictionary objectForKey:@"model"] intValue ] ];
         //The int code for the vehicle's color:
         [self setModel:[[aDictionary objectForKey:@"color"] intValue ] ];
-        
     }
     return self;
 }

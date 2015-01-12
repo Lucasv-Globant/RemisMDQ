@@ -60,16 +60,18 @@
     self = [super init];
     if (self)
     {
+        //Recovering the dictionaries from NSUserDefaults for User, Request, and Vehicle:
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         NSDictionary *userDictionary = [defaults dictionaryForKey:[self stringCodeForCurrentUser]];
         NSDictionary *currentRequestDictionary = [defaults dictionaryForKey:[self stringCodeForCurrentRequest]];
         NSDictionary *vehicleOfCurrentRequestDictionary = [defaults dictionaryForKey:[self stringCodeForVehicleOfCurrentRequest]];
         
+        //If there was a dictionary for the User object, proceed to initialize the User object:
         if (userDictionary != nil)
         {
             [self setUser:[[User alloc] initFromDictionary:userDictionary]];
-            [self setCurrentRequest:[Request alloc] initFromDictionary:currentRequestDictionary];
-            [self setVehicleOfCurrentRequest:[Vehicle alloc] initFromDictionary:vehicleOfCurrentRequestDictionary];
+            [self setCurrentRequest:[[Request alloc] initInApplication:self withDictionary:currentRequestDictionary]];
+            [self setVehicleOfCurrentRequest:[[Vehicle alloc] initInApplication:self withDictionary:vehicleOfCurrentRequestDictionary]];
         }
     }
     return self;
@@ -131,6 +133,9 @@
 }
 
 -(User *)getUserWithObjectId:(NSString *)objectId
+
+//Since this is a mobile application, it only has one User (which is the vehicle of the current request)
+//Returns the current user if the objectId being requested matches with the objectId of the user, otherwise return nil.
 {
     if ( [[[self user] objectId] isEqualToString:objectId] )
     {

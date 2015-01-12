@@ -62,7 +62,7 @@
     return result;
 }
 
--(instancetype)initInApplication:(MobileApplication *) app withDictionary:(NSDictionary *)dict
+-(id)initInApplication:(MobileApplication *) app withDictionary:(NSDictionary *)dict
 //Initializes the instance using the dictionary and, when necessary, leveraging the container app passed as parameter to create the related objects (double dispatching)
 {
     self = [super init];

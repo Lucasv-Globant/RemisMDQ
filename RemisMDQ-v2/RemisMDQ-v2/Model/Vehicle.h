@@ -43,4 +43,5 @@ typedef enum {
 
 -(id)init;
 -(NSDictionary *)outputToDictionary;
+-(id)initInApplication:(MobileApplication *) app withDictionary:(NSDictionary *) aDictionary;
 @end
