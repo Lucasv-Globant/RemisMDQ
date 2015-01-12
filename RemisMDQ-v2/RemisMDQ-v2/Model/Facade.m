@@ -120,4 +120,10 @@
     }];
 }
 
+-(NSArray *)getInParse:(NSString *)from {
+    PFQuery * query = [PFQuery queryWithClassName:from];
+    NSArray * findObject = [[NSArray alloc]initWithObjects:[query findObjects],nil];
+    return findObject;
+}
+
 @end

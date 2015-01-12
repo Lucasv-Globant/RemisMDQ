@@ -8,6 +8,5 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Screen1ViewController : UIViewController
-
+@interface Screen1ViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 @end

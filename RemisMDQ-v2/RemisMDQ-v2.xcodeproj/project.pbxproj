@@ -41,6 +41,8 @@
 		A480B0131A60526E00C34F9B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A480B0121A60526E00C34F9B /* SystemConfiguration.framework */; };
 		A480B0151A60527600C34F9B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A480B0141A60527600C34F9B /* libz.dylib */; };
 		A480B0171A60527E00C34F9B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A480B0161A60527E00C34F9B /* libsqlite3.dylib */; };
+		A48699611A63FC4000C3CE8F /* CellCustomAgency.m in Sources */ = {isa = PBXBuildFile; fileRef = A486995F1A63FC4000C3CE8F /* CellCustomAgency.m */; };
+		A48699621A63FC4000C3CE8F /* CellCustomAgency.xib in Resources */ = {isa = PBXBuildFile; fileRef = A48699601A63FC4000C3CE8F /* CellCustomAgency.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +105,9 @@
 		A480B0121A60526E00C34F9B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A480B0141A60527600C34F9B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		A480B0161A60527E00C34F9B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		A486995E1A63FC4000C3CE8F /* CellCustomAgency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellCustomAgency.h; sourceTree = "<group>"; };
+		A486995F1A63FC4000C3CE8F /* CellCustomAgency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellCustomAgency.m; sourceTree = "<group>"; };
+		A48699601A63FC4000C3CE8F /* CellCustomAgency.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellCustomAgency.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +233,7 @@
 				A480AFF01A60516800C34F9B /* Screen1ViewController.m */,
 				A480AFF11A60516800C34F9B /* Screen1ViewController.xib */,
 				A480AFEE1A60504A00C34F9B /* Storyboard */,
+				A486995D1A63FC1C00C3CE8F /* Custom */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -272,6 +278,16 @@
 				A480AFFA1A60517E00C34F9B /* ParseUI.framework */,
 			);
 			path = "parse-library-1.6.1";
+			sourceTree = "<group>";
+		};
+		A486995D1A63FC1C00C3CE8F /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				A486995E1A63FC4000C3CE8F /* CellCustomAgency.h */,
+				A486995F1A63FC4000C3CE8F /* CellCustomAgency.m */,
+				A48699601A63FC4000C3CE8F /* CellCustomAgency.xib */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,6 +375,7 @@
 				A0C59EF21A604749002A2F89 /* Images.xcassets in Resources */,
 				A480B0011A60517E00C34F9B /* parse-library-1.6.1.zip in Resources */,
 				A480AFF31A60516800C34F9B /* Screen1ViewController.xib in Resources */,
+				A48699621A63FC4000C3CE8F /* CellCustomAgency.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0C59F281A604C79002A2F89 /* Request.m in Sources */,
+				A48699611A63FC4000C3CE8F /* CellCustomAgency.m in Sources */,
 				A0C59F261A604C79002A2F89 /* MobileApplication.m in Sources */,
 				A0C59EED1A604749002A2F89 /* ViewController.m in Sources */,
 				A0C59EEA1A604749002A2F89 /* AppDelegate.m in Sources */,

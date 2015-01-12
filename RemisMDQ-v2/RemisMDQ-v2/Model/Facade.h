@@ -20,5 +20,6 @@
 -(NSDictionary *)findInParseWith:(NSString *)whereKey value:(NSString *)value in:(NSString *)from;
 -(void)updateRequestInParseWith:(NSString *)Id data:(NSDictionary *)dataUpdate;
 -(void)deleteInPaseWith:(NSString *)Id in:(NSString *)from;
+-(NSArray *)getInParse:(NSString *)from;
 
 @end

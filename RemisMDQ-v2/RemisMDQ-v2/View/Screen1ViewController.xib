@@ -10,6 +10,7 @@
                 <outlet property="buttonAddVehicle" destination="qdf-oc-Xan" id="3LL-hg-txL"/>
                 <outlet property="segmentedColor" destination="vFl-49-pSQ" id="ShS-Ml-FUg"/>
                 <outlet property="segmentedModel" destination="ABM-YV-bWx" id="EXh-nF-lCL"/>
+                <outlet property="tableView" destination="oCQ-Vr-VfR" id="MBA-bd-ATb"/>
                 <outlet property="textFieldLicense" destination="KjD-8k-Eqd" id="2PQ-cP-W0J"/>
                 <outlet property="textFieldNameAgency" destination="JH3-U5-7tb" id="Wn8-b3-fei"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -21,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="nombre" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JH3-U5-7tb">
-                    <rect key="frame" x="16" y="118" width="278" height="30"/>
+                    <rect key="frame" x="16" y="112" width="278" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
@@ -32,13 +33,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Agregar auto a la agencia" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3K-iy-oaS">
-                    <rect key="frame" x="16" y="217" width="196" height="21"/>
+                    <rect key="frame" x="16" y="200" width="196" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ABM-YV-bWx">
-                    <rect key="frame" x="16" y="276" width="278" height="29"/>
+                    <rect key="frame" x="16" y="235" width="278" height="29"/>
                     <segments>
                         <segment title="Corsa"/>
                         <segment title="Megane"/>
@@ -51,7 +52,7 @@
                     </connections>
                 </segmentedControl>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vFl-49-pSQ">
-                    <rect key="frame" x="16" y="330" width="278" height="29"/>
+                    <rect key="frame" x="16" y="278" width="278" height="29"/>
                     <segments>
                         <segment title="Gray"/>
                         <segment title="Silver"/>
@@ -65,12 +66,12 @@
                     </connections>
                 </segmentedControl>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="licencia" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KjD-8k-Eqd">
-                    <rect key="frame" x="16" y="386" width="278" height="30"/>
+                    <rect key="frame" x="16" y="323" width="278" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdf-oc-Xan">
-                    <rect key="frame" x="240" y="430" width="54" height="30"/>
+                    <rect key="frame" x="240" y="524" width="54" height="30"/>
                     <state key="normal" title="Agregar">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -79,14 +80,22 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QiL-yP-Co8">
-                    <rect key="frame" x="177" y="500" width="117" height="30"/>
-                    <state key="normal" title="Finalizar Agencia">
+                    <rect key="frame" x="240" y="162" width="54" height="30"/>
+                    <state key="normal" title="Agregar">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="addAgency:" destination="-1" eventType="touchUpInside" id="2Vv-ON-cWu"/>
+                        <action selector="addAgency:" destination="-1" eventType="touchUpInside" id="0Uk-JS-hPC"/>
                     </connections>
                 </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oCQ-Vr-VfR">
+                    <rect key="frame" x="16" y="369" width="278" height="147"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Igf-h1-9d3"/>
+                        <outlet property="delegate" destination="-1" id="J6L-gj-iwG"/>
+                    </connections>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
