@@ -10,6 +10,7 @@
 
 #import "MobileApplication.h"
 
+
 @interface MobileApplication ()
 @end
 
@@ -25,7 +26,7 @@
     
     // executes a block object once and only once for the lifetime of an application
     dispatch_once(&p, ^{
-        _sharedObject = [[self alloc] initFromPersistentStorage];
+        _sharedObject = [[self alloc] initFromPersistentStorageOrNewInstance];
     });
     
     // returns the same object each time
@@ -54,7 +55,7 @@
 
 
 #pragma mark -Persistence
--(instancetype)initFromPersistentStorage
+-(instancetype)initFromPersistentStorageOrNewInstance
 {
     //Loads the context data from NSUserDefaults
     self = [super init];

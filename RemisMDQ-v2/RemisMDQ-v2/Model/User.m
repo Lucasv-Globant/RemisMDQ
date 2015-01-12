@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "User.h"
 
+@class User;
 @interface User ()
 @end
 

@@ -15,6 +15,7 @@
 
 @class Vehicle;
 @class User;
+@class MobileApplication;
 @interface Request : NSObject
 
 //RequestStatusCode enumerates the possible states of a request.

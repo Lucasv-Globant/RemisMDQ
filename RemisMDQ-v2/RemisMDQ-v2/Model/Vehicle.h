@@ -10,6 +10,7 @@
 #import "Location.h"
 #import "MobileApplication.h"
 
+@class MobileApplication;
 @interface Vehicle : NSObject
 
 typedef enum {
@@ -43,5 +44,5 @@ typedef enum {
 
 -(id)init;
 -(NSDictionary *)outputToDictionary;
--(id)initInApplication:(MobileApplication *) app withDictionary:(NSDictionary *) aDictionary;
+-(id)initInApplication:(MobileApplication *)app withDictionary:(NSDictionary *)aDictionary;
 @end
