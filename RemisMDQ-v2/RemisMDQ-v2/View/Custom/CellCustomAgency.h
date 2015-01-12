@@ -14,5 +14,5 @@
 @property (strong, nonatomic) IBOutlet UILabel *labelNameAgency;
 
 //Method
--(void)configurarCelda:( NSArray * )agency;
+-(void)configurarCelda:( NSMutableArray * )agency;
 @end

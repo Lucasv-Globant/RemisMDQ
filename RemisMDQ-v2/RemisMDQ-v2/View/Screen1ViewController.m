@@ -25,7 +25,7 @@
 @property (assign, nonatomic)   NSInteger selectedSegmentModel;
 @property (assign, nonatomic)   NSInteger selectedSegmentColor ;
 @property (strong, nonatomic)   PFObject * vehicle;
-@property (strong, nonatomic)   NSArray * findObject;
+@property (strong, nonatomic)   NSMutableArray * findObject;
 @property (assign, nonatomic)   NSInteger cantidadAgency;
 @property (strong, nonatomic)   NSString * agency;
 @end
@@ -64,7 +64,7 @@
      PFObject * agency = [PFObject objectWithClassName:@"Agency"];
      [agency setObject:nameagency forKey:@"name"];
      [agency save];
-    [self.tableView reloadData];
+    [_tableView reloadData];
 }
 
 - (IBAction)AddVehicle:(id)sender {
@@ -88,9 +88,9 @@
 {
    self.findObject = [[Facade sharedInstance] getInParse:@"Agency"];
     
-    self.cantidadAgency = [self.findObject count];
+    self.cantidadAgency = self.findObject.count ;
     
-    [self.tableView reloadData];
+    [_tableView reloadData];
 
 }
 
