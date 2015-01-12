@@ -28,6 +28,7 @@
 @property (strong, nonatomic)   NSMutableArray * findObject;
 @property (assign, nonatomic)   NSInteger cantidadAgency;
 @property (strong, nonatomic)   NSString * agency;
+@property (strong, nonatomic)   UIRefreshControl * refreshControl;
 @end
 
 @implementation Screen1ViewController
@@ -40,9 +41,27 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"CellCustomAgency"
                                            bundle:[NSBundle mainBundle]]
                                 forCellReuseIdentifier:@"CellCustomAgency"] ;
-    [self findAgency];
     
+
+    [self findAgency];
+    // Initialize Refresh Control
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    
+    // Configure Refresh Control
+    [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    
+    // Configure View Controller
+    [self setRefreshControl:refreshControl];
 }
+
+- (void)refresh:(id)sender {
+    NSLog(@"Refreshing");
+    
+    [self findAgency];
+    // End Refreshing
+    [(UIRefreshControl *)sender endRefreshing];
+}
+
 - (IBAction)segmentColor:(id)sender {
     UISegmentedControl *segmentedControl = (UISegmentedControl *) sender;
     self.selectedSegmentColor = segmentedControl.selectedSegmentIndex;
@@ -66,7 +85,10 @@
      [agency setObject:nameagency forKey:@"name"];
      [agency save];
     [self findAgency];
+    
+    
 }
+
 
 - (IBAction)AddVehicle:(id)sender {
      [Facade sharedInstance];
