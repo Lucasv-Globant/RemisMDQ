@@ -11,7 +11,8 @@
 
 
 @interface Facade ()
-
+@property (nonatomic,copy) Success successBlock;
+@property (nonatomic,copy) Failure failureBlock;
 @end
 
 @implementation Facade
@@ -120,16 +121,21 @@
     }];
 }
 
--(NSMutableArray *)getInParse:(NSString *)from {
+-(void)getInParse:(Success)success failure:(Failure)failure from:(NSString *)from {
     PFQuery * query = [PFQuery queryWithClassName:from];
-    NSMutableArray * findObject;
+   // NSMutableArray * findObject = [[NSMutableArray alloc] init];
+     __weak typeof(self) weakself = self;
+    self.successBlock = success;
+    self.failureBlock = failure;
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        for (PFObject * object in objects) {
-            [findObject addObject:object];
+        if (error) {
+            weakself.failureBlock(error);
         }
-        
+        else {
+            weakself.successBlock(objects);
+           // NSLog(@"%@",objects);
+        }
     }];
-    return findObject;
 }
 
 @end

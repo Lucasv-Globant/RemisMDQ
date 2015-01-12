@@ -34,6 +34,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.findObject = [[NSMutableArray alloc] init];
     self.selectedSegmentColor=0;
     self.selectedSegmentModel=0;
     [self.tableView registerNib:[UINib nibWithNibName:@"CellCustomAgency"
@@ -64,7 +65,7 @@
      PFObject * agency = [PFObject objectWithClassName:@"Agency"];
      [agency setObject:nameagency forKey:@"name"];
      [agency save];
-    [_tableView reloadData];
+    [self findAgency];
 }
 
 - (IBAction)AddVehicle:(id)sender {
@@ -86,13 +87,28 @@
 
 -(void)findAgency
 {
-   self.findObject = [[Facade sharedInstance] getInParse:@"Agency"];
+    [[Facade sharedInstance] getInParse:[self getSucces] failure:[self getFailure] from:@"Agency"];
     
-    self.cantidadAgency = self.findObject.count ;
-    
-    [_tableView reloadData];
-
 }
+
+-(Success)getSucces
+{
+    return ^(NSArray * array) {
+          __weak typeof(self) weakself = self;
+        weakself.cantidadAgency = array.count;
+        [weakself.findObject addObjectsFromArray:array];
+        NSLog(@"%@",weakself.findObject);
+        [_tableView reloadData];
+    };
+}
+
+-(Failure)getFailure
+{
+    return ^(NSError *error) {
+        NSLog(@"error");
+    };
+}
+
 
 #pragma mark - UITableViewDataSource
 

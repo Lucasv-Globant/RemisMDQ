@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "Request.h"
+typedef void (^Success)(NSArray* array);
+typedef void (^Failure)(NSError* error);
 @class Request;
 @interface Facade : NSObject
 
@@ -20,6 +22,6 @@
 -(NSDictionary *)findInParseWith:(NSString *)whereKey value:(NSString *)value in:(NSString *)from;
 -(void)updateRequestInParseWith:(NSString *)Id data:(NSDictionary *)dataUpdate;
 -(void)deleteInPaseWith:(NSString *)Id in:(NSString *)from;
--(NSMutableArray *)getInParse:(NSString *)from;
+-(void)getInParse:(Success)success failure:(Failure)failure from:(NSString *)from;
 
 @end
