@@ -96,7 +96,7 @@
             NSLog(@"Successfully retrieved %lu scores.", (unsigned long)objects.count);
             // Do something with the found objects
             for (PFObject *object in objects) {
-                NSLog(@"%@", object.objectId);
+                //NSLog(@"%@", object.objectId);
                 [dic objectForKey:objects];
             }
         } else {
@@ -133,6 +133,7 @@
         }
         else {
             weakself.successBlock(objects);
+          //  NSLog(@"%@",objects);
            
         }
     }];

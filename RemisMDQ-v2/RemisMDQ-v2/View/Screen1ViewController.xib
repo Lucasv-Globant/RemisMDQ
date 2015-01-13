@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="buttonAddAgency" destination="QiL-yP-Co8" id="TP6-1n-TrL"/>
                 <outlet property="buttonAddVehicle" destination="qdf-oc-Xan" id="3LL-hg-txL"/>
+                <outlet property="buttonVehicle" destination="kge-az-2wC" id="IWa-Ic-CGL"/>
                 <outlet property="segmentedColor" destination="vFl-49-pSQ" id="ShS-Ml-FUg"/>
                 <outlet property="segmentedModel" destination="ABM-YV-bWx" id="EXh-nF-lCL"/>
                 <outlet property="tableView" destination="oCQ-Vr-VfR" id="MBA-bd-ATb"/>
@@ -88,12 +89,21 @@
                     </connections>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdf-oc-Xan">
-                    <rect key="frame" x="252" y="595" width="54" height="30"/>
+                    <rect key="frame" x="252" y="603" width="54" height="30"/>
                     <state key="normal" title="Agregar">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="AddVehicle:" destination="-1" eventType="touchUpInside" id="qaS-4b-TrH"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kge-az-2wC">
+                    <rect key="frame" x="38" y="137" width="49" height="30"/>
+                    <state key="normal" title="Vehicle">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="listVehicle:" destination="-1" eventType="touchUpInside" id="3pI-TQ-FfZ"/>
                     </connections>
                 </button>
             </subviews>

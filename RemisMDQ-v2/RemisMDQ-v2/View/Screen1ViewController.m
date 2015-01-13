@@ -11,6 +11,7 @@
 #import "NSString+CustonString.h"
 #import "Facade.h"
 #import "CellCustomAgency.h"
+#import "ViewControllerVehicle.h"
 
 @interface Screen1ViewController ()
 //IBOutlet
@@ -21,6 +22,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *buttonAddVehicle;
 @property (strong, nonatomic) IBOutlet UIButton *buttonAddAgency;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UIButton *buttonVehicle;
 //var
 @property (assign, nonatomic)   NSInteger selectedSegmentModel;
 @property (assign, nonatomic)   NSInteger selectedSegmentColor ;
@@ -74,7 +76,7 @@
 }
 //Metodos para UISegmented Model
 - (IBAction)segmentModel:(id)sender {
-//Me permite guardar el index de cada objecto en una variable y traducirlo al enum
+    //Me permite guardar el index de cada objecto en una variable y traducirlo al enum
     UISegmentedControl *segmentedControl = (UISegmentedControl *) sender;
     self.selectedSegmentModel = segmentedControl.selectedSegmentIndex;
     NSLog(@"%ld",(long)self.selectedSegmentModel);
@@ -85,6 +87,7 @@
     if ([[self.textFieldNameAgency text] EsVacio]) {
         //Verifico campo vacio
         [[[UIAlertView alloc] initWithTitle:@"Error" message:@"No ingresaste ninguna campo" delegate:nil cancelButtonTitle:@"Aceptar" otherButtonTitles:@"Cancelar", nil] show];}
+    else{
     //Guardo en Parse
      [Facade sharedInstance];
      NSString * nameagency = [[NSString alloc] initWithString:self.textFieldNameAgency.text];
@@ -92,17 +95,19 @@
      [agency setObject:nameagency forKey:@"name"];
      [agency saveInBackground];
      [self.tableView reloadData];
+    }
 }
 
 
 - (IBAction)AddVehicle:(id)sender {
     //Guardo en Parse Vehiculo
-     [Facade sharedInstance];
+    [Facade sharedInstance];
     NSString * licencia = [[NSString alloc]initWithString:self.textFieldLicense.text];
     if ([[self.textFieldLicense text] EsVacio] ) {
         [[[UIAlertView alloc] initWithTitle:@"Error" message:@"No ingresaste ninguna campo" delegate:nil cancelButtonTitle:@"Aceptar" otherButtonTitles:@"Cancelar", nil] show];
         
     }
+    else{
        self.vehicle =[PFObject objectWithClassName:@"Vehicle"];
        [self.vehicle setObject:[NSNumber numberWithInteger:self.selectedSegmentModel]forKey:@"model"];
        [self.vehicle setObject:[NSNumber numberWithInteger:self.selectedSegmentColor] forKey:@"color"];
@@ -110,7 +115,11 @@
        [self.vehicle setValue:self.agency forKey:@"agency"];
        [self.vehicle saveInBackground];
        NSLog(@"%@",self.vehicle);
-    
+    }
+}
+- (IBAction)listVehicle:(id)sender {
+    ViewControllerVehicle * control = [[ViewControllerVehicle alloc]initWithNibName:@"ViewControllerVehicle" bundle:[NSBundle mainBundle] ];
+    [self.navigationController pushViewController:control animated:YES];
 }
 #pragma mark findAgency
 -(void)findAgency

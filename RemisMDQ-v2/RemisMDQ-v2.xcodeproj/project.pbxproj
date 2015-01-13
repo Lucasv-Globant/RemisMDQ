@@ -43,6 +43,10 @@
 		A480B0171A60527E00C34F9B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A480B0161A60527E00C34F9B /* libsqlite3.dylib */; };
 		A48699611A63FC4000C3CE8F /* CellCustomAgency.m in Sources */ = {isa = PBXBuildFile; fileRef = A486995F1A63FC4000C3CE8F /* CellCustomAgency.m */; };
 		A48699621A63FC4000C3CE8F /* CellCustomAgency.xib in Resources */ = {isa = PBXBuildFile; fileRef = A48699601A63FC4000C3CE8F /* CellCustomAgency.xib */; };
+		A4C81D491A65809F0091DA29 /* CellCustomVehicle.m in Sources */ = {isa = PBXBuildFile; fileRef = A4C81D471A65809F0091DA29 /* CellCustomVehicle.m */; };
+		A4C81D4A1A65809F0091DA29 /* CellCustomVehicle.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4C81D481A65809F0091DA29 /* CellCustomVehicle.xib */; };
+		A4C81D4E1A659CE30091DA29 /* ViewControllerVehicle.m in Sources */ = {isa = PBXBuildFile; fileRef = A4C81D4C1A659CE30091DA29 /* ViewControllerVehicle.m */; };
+		A4C81D4F1A659CE30091DA29 /* ViewControllerVehicle.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4C81D4D1A659CE30091DA29 /* ViewControllerVehicle.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +112,12 @@
 		A486995E1A63FC4000C3CE8F /* CellCustomAgency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellCustomAgency.h; sourceTree = "<group>"; };
 		A486995F1A63FC4000C3CE8F /* CellCustomAgency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellCustomAgency.m; sourceTree = "<group>"; };
 		A48699601A63FC4000C3CE8F /* CellCustomAgency.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellCustomAgency.xib; sourceTree = "<group>"; };
+		A4C81D461A65809F0091DA29 /* CellCustomVehicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellCustomVehicle.h; sourceTree = "<group>"; };
+		A4C81D471A65809F0091DA29 /* CellCustomVehicle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellCustomVehicle.m; sourceTree = "<group>"; };
+		A4C81D481A65809F0091DA29 /* CellCustomVehicle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellCustomVehicle.xib; sourceTree = "<group>"; };
+		A4C81D4B1A659CE30091DA29 /* ViewControllerVehicle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerVehicle.h; sourceTree = "<group>"; };
+		A4C81D4C1A659CE30091DA29 /* ViewControllerVehicle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerVehicle.m; sourceTree = "<group>"; };
+		A4C81D4D1A659CE30091DA29 /* ViewControllerVehicle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerVehicle.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +244,9 @@
 				A480AFF11A60516800C34F9B /* Screen1ViewController.xib */,
 				A480AFEE1A60504A00C34F9B /* Storyboard */,
 				A486995D1A63FC1C00C3CE8F /* Custom */,
+				A4C81D4B1A659CE30091DA29 /* ViewControllerVehicle.h */,
+				A4C81D4C1A659CE30091DA29 /* ViewControllerVehicle.m */,
+				A4C81D4D1A659CE30091DA29 /* ViewControllerVehicle.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -286,6 +299,9 @@
 				A486995E1A63FC4000C3CE8F /* CellCustomAgency.h */,
 				A486995F1A63FC4000C3CE8F /* CellCustomAgency.m */,
 				A48699601A63FC4000C3CE8F /* CellCustomAgency.xib */,
+				A4C81D461A65809F0091DA29 /* CellCustomVehicle.h */,
+				A4C81D471A65809F0091DA29 /* CellCustomVehicle.m */,
+				A4C81D481A65809F0091DA29 /* CellCustomVehicle.xib */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -371,6 +387,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0C59EF01A604749002A2F89 /* Main.storyboard in Resources */,
+				A4C81D4F1A659CE30091DA29 /* ViewControllerVehicle.xib in Resources */,
+				A4C81D4A1A65809F0091DA29 /* CellCustomVehicle.xib in Resources */,
 				A0C59EF51A604749002A2F89 /* LaunchScreen.xib in Resources */,
 				A0C59EF21A604749002A2F89 /* Images.xcassets in Resources */,
 				A480B0011A60517E00C34F9B /* parse-library-1.6.1.zip in Resources */,
@@ -395,9 +413,11 @@
 			files = (
 				A0C59F281A604C79002A2F89 /* Request.m in Sources */,
 				A48699611A63FC4000C3CE8F /* CellCustomAgency.m in Sources */,
+				A4C81D4E1A659CE30091DA29 /* ViewControllerVehicle.m in Sources */,
 				A0C59F261A604C79002A2F89 /* MobileApplication.m in Sources */,
 				A0C59EED1A604749002A2F89 /* ViewController.m in Sources */,
 				A0C59EEA1A604749002A2F89 /* AppDelegate.m in Sources */,
+				A4C81D491A65809F0091DA29 /* CellCustomVehicle.m in Sources */,
 				A0C59F221A604C79002A2F89 /* Agency.m in Sources */,
 				A0C59F2A1A604C79002A2F89 /* Vehicle.m in Sources */,
 				A480AFF21A60516800C34F9B /* Screen1ViewController.m in Sources */,
