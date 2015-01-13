@@ -10,7 +10,6 @@
 
 @interface CellCustomAgency : UITableViewCell
 //IBOutlet
-@property (strong, nonatomic) IBOutlet UILabel *labelObjectId;
 @property (strong, nonatomic) IBOutlet UILabel *labelNameAgency;
 
 //Method

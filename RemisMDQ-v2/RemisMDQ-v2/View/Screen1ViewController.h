@@ -9,4 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface Screen1ViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
+
+-(void)refreshView:(UIRefreshControl *)refresh;
 @end

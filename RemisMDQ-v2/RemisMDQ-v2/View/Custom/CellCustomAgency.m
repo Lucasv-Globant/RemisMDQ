@@ -23,7 +23,6 @@
 -(void)configurarCelda:( NSMutableArray * )agency {
    
     [self.labelNameAgency setText:[agency valueForKey:@"name"] ];
-    [self.labelObjectId setText:[agency valueForKey:@"objectId"]];
 }
 
 @end

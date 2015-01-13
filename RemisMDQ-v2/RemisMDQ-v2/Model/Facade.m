@@ -133,7 +133,7 @@
         }
         else {
             weakself.successBlock(objects);
-           // NSLog(@"%@",objects);
+           
         }
     }];
 }
