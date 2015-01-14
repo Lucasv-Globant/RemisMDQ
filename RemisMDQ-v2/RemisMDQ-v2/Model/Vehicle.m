@@ -15,6 +15,8 @@
 
 @implementation Vehicle : NSObject
 
+#pragma mark - Initialization and persistence
+
 -(id)init
 //Initializes the instance with default values, which should be properly set afterwards
 
@@ -51,6 +53,7 @@
     return result;
 }
 
+
 -(id)initInApplication:(MobileApplication *) app withDictionary:(NSDictionary *) aDictionary
 {
     self = [super init];
@@ -77,5 +80,83 @@
 {
     
 }
+
+#pragma mark - Codes to string
+
++(NSString *)stringForVehicleModelCode:(VehicleModel)vehicleModel
+{
+    NSString *result;
+    switch(vehicleModel)
+    {
+        case (VehicleModelNotSpecified):
+            result = @"No especificado";
+            break;
+        case (VehicleModelCorsa):
+            result = @"Chevrolet Corsa";
+            break;
+        case (VehicleModelMegane):
+            result = @"Renault Megane";
+            break;
+        case (VehicleModelLogan):
+            result = @"Renault Logan";
+            break;
+        case (VehicleModelC4):
+            result = @"Citröen C4";
+            break;
+        case (VehicleModelSiena):
+            result = @"Fiat Siena";
+            break;
+        default:
+            result = @"No definido";
+            break;
+    }
+    return result;
+}
+
+
++(NSString *)stringForVehicleColorCode:(VehicleColor)vehicleColor
+{
+    NSString *result;
+    switch(vehicleColor)
+    {
+        case (VehicleColorNotSpecified):
+            result = @"No especificado";
+            break;
+        case (VehicleColorGray):
+            result = @"Gris";
+            break;
+        case (VehicleColorSilver):
+            result = @"Plateado";
+            break;
+        case (VehicleColorWhite):
+            result = @"Blanco";
+            break;
+        case (VehicleColorBlack):
+            result = @"Negro";
+            break;
+        case (VehicleColorRed):
+            result = @"Rojo";
+            break;
+        case (VehicleColorBlue):
+            result = @"Azul";
+            break;
+        default:
+            result = @"No definido";
+            break;
+    }
+    return result;
+}
+
+
+-(NSString *)stringForVehicleModel
+{
+    return [Vehicle stringForVehicleModelCode:[self model]];
+}
+
+-(NSString *)stringForVehicleColor
+{
+    return [Vehicle stringForVehicleColorCode:[self color]];
+}
+
 
 @end

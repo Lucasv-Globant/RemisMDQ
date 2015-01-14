@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A06BB2F91A66AD5600B4C138 /* ViewControllerUserSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = A06BB2F71A66AD5600B4C138 /* ViewControllerUserSetup.m */; };
+		A06BB2FA1A66AD5600B4C138 /* ViewControllerUserSetup.xib in Resources */ = {isa = PBXBuildFile; fileRef = A06BB2F81A66AD5600B4C138 /* ViewControllerUserSetup.xib */; };
+		A06BB2FD1A66B03800B4C138 /* AppBackground-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = A06BB2FC1A66B03800B4C138 /* AppBackground-iPad.png */; };
+		A06BB3011A66B57000B4C138 /* ViewControllerAgencySelection.m in Sources */ = {isa = PBXBuildFile; fileRef = A06BB2FF1A66B57000B4C138 /* ViewControllerAgencySelection.m */; };
+		A06BB3021A66B57000B4C138 /* ViewControllerAgencySelection.xib in Resources */ = {isa = PBXBuildFile; fileRef = A06BB3001A66B57000B4C138 /* ViewControllerAgencySelection.xib */; };
 		A0C59EE71A604749002A2F89 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C59EE61A604749002A2F89 /* main.m */; };
 		A0C59EEA1A604749002A2F89 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C59EE91A604749002A2F89 /* AppDelegate.m */; };
 		A0C59EED1A604749002A2F89 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C59EEC1A604749002A2F89 /* ViewController.m */; };
@@ -60,6 +65,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A06BB2F61A66AD5600B4C138 /* ViewControllerUserSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerUserSetup.h; sourceTree = "<group>"; };
+		A06BB2F71A66AD5600B4C138 /* ViewControllerUserSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerUserSetup.m; sourceTree = "<group>"; };
+		A06BB2F81A66AD5600B4C138 /* ViewControllerUserSetup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerUserSetup.xib; sourceTree = "<group>"; };
+		A06BB2FC1A66B03800B4C138 /* AppBackground-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppBackground-iPad.png"; path = "Assets/AppBackground-iPad.png"; sourceTree = "<group>"; };
+		A06BB2FE1A66B57000B4C138 /* ViewControllerAgencySelection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewControllerAgencySelection.h; path = Custom/ViewControllerAgencySelection.h; sourceTree = "<group>"; };
+		A06BB2FF1A66B57000B4C138 /* ViewControllerAgencySelection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewControllerAgencySelection.m; path = Custom/ViewControllerAgencySelection.m; sourceTree = "<group>"; };
+		A06BB3001A66B57000B4C138 /* ViewControllerAgencySelection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewControllerAgencySelection.xib; path = Custom/ViewControllerAgencySelection.xib; sourceTree = "<group>"; };
 		A0C59EE11A604749002A2F89 /* RemisMDQ-v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RemisMDQ-v2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0C59EE51A604749002A2F89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0C59EE61A604749002A2F89 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -154,6 +166,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A06BB2FB1A66AFDA00B4C138 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				A06BB2FC1A66B03800B4C138 /* AppBackground-iPad.png */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
 		A0C59ED81A604749002A2F89 = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +259,7 @@
 		A480AFED1A60501F00C34F9B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A06BB2FB1A66AFDA00B4C138 /* Assets */,
 				A480AFEF1A60516800C34F9B /* Screen1ViewController.h */,
 				A480AFF01A60516800C34F9B /* Screen1ViewController.m */,
 				A480AFF11A60516800C34F9B /* Screen1ViewController.xib */,
@@ -247,6 +268,12 @@
 				A4C81D4B1A659CE30091DA29 /* ViewControllerVehicle.h */,
 				A4C81D4C1A659CE30091DA29 /* ViewControllerVehicle.m */,
 				A4C81D4D1A659CE30091DA29 /* ViewControllerVehicle.xib */,
+				A06BB2F61A66AD5600B4C138 /* ViewControllerUserSetup.h */,
+				A06BB2F71A66AD5600B4C138 /* ViewControllerUserSetup.m */,
+				A06BB2F81A66AD5600B4C138 /* ViewControllerUserSetup.xib */,
+				A06BB2FE1A66B57000B4C138 /* ViewControllerAgencySelection.h */,
+				A06BB2FF1A66B57000B4C138 /* ViewControllerAgencySelection.m */,
+				A06BB3001A66B57000B4C138 /* ViewControllerAgencySelection.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -386,13 +413,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A06BB3021A66B57000B4C138 /* ViewControllerAgencySelection.xib in Resources */,
 				A0C59EF01A604749002A2F89 /* Main.storyboard in Resources */,
+				A06BB2FD1A66B03800B4C138 /* AppBackground-iPad.png in Resources */,
 				A4C81D4F1A659CE30091DA29 /* ViewControllerVehicle.xib in Resources */,
 				A4C81D4A1A65809F0091DA29 /* CellCustomVehicle.xib in Resources */,
 				A0C59EF51A604749002A2F89 /* LaunchScreen.xib in Resources */,
 				A0C59EF21A604749002A2F89 /* Images.xcassets in Resources */,
 				A480B0011A60517E00C34F9B /* parse-library-1.6.1.zip in Resources */,
 				A480AFF31A60516800C34F9B /* Screen1ViewController.xib in Resources */,
+				A06BB2FA1A66AD5600B4C138 /* ViewControllerUserSetup.xib in Resources */,
 				A48699621A63FC4000C3CE8F /* CellCustomAgency.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,10 +443,12 @@
 			files = (
 				A0C59F281A604C79002A2F89 /* Request.m in Sources */,
 				A48699611A63FC4000C3CE8F /* CellCustomAgency.m in Sources */,
+				A06BB3011A66B57000B4C138 /* ViewControllerAgencySelection.m in Sources */,
 				A4C81D4E1A659CE30091DA29 /* ViewControllerVehicle.m in Sources */,
 				A0C59F261A604C79002A2F89 /* MobileApplication.m in Sources */,
 				A0C59EED1A604749002A2F89 /* ViewController.m in Sources */,
 				A0C59EEA1A604749002A2F89 /* AppDelegate.m in Sources */,
+				A06BB2F91A66AD5600B4C138 /* ViewControllerUserSetup.m in Sources */,
 				A4C81D491A65809F0091DA29 /* CellCustomVehicle.m in Sources */,
 				A0C59F221A604C79002A2F89 /* Agency.m in Sources */,
 				A0C59F2A1A604C79002A2F89 /* Vehicle.m in Sources */,
@@ -555,6 +587,7 @@
 					"$(PROJECT_DIR)/RemisMDQ-v2/Framework/parse-library-1.6.1",
 				);
 				INFOPLIST_FILE = "RemisMDQ-v2/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -569,6 +602,7 @@
 					"$(PROJECT_DIR)/RemisMDQ-v2/Framework/parse-library-1.6.1",
 				);
 				INFOPLIST_FILE = "RemisMDQ-v2/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

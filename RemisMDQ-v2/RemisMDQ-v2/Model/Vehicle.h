@@ -45,4 +45,9 @@ typedef enum {
 -(id)init;
 -(NSDictionary *)outputToDictionary;
 -(id)initInApplication:(MobileApplication *)app withDictionary:(NSDictionary *)aDictionary;
++(NSString *)stringForVehicleModelCode:(VehicleModel)vehicleModel;
++(NSString *)stringForVehicleColorCode:(VehicleColor)vehicleColor;
+-(NSString *)stringForVehicleColor;
+-(NSString *)stringForVehicleModel;
+
 @end
