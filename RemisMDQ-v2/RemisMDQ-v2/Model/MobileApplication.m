@@ -3,7 +3,7 @@
 //  RemisMDQ
 //
 //  Created by Lucas on 1/7/15.
-//  Copyright (c) 2015 Globant iOS MDQ. All rights reserved.
+//  Copyright (c) 2015 iOS MDQ. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -73,6 +73,12 @@
             [self setUser:[[User alloc] initFromDictionary:userDictionary]];
             [self setCurrentRequest:[[Request alloc] initInApplication:self withDictionary:currentRequestDictionary]];
             [self setVehicleOfCurrentRequest:[[Vehicle alloc] initInApplication:self withDictionary:vehicleOfCurrentRequestDictionary]];
+        }
+        else
+        {
+            [self setUser:[[User alloc] init]];
+            [self setCurrentRequest:[[Request alloc] init]];
+            [self setVehicleOfCurrentRequest:[[Vehicle alloc] init]];
         }
     }
     return self;
