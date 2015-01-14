@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SWTableViewCell.h"
 
-@interface CellCustomVehicle : UITableViewCell
+@interface CellCustomVehicle : SWTableViewCell
 -(void)configurarCelda:( NSMutableArray * )vehicle;
 @end

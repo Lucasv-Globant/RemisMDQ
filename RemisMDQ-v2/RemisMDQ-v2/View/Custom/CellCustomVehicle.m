@@ -10,6 +10,8 @@
 #import <Parse/Parse.h>
 #import "Facade.h"
 #import "Vehicle.h"
+
+
 @interface CellCustomVehicle ()
 @property (strong, nonatomic) IBOutlet UILabel *labelAgency;
 @property (strong, nonatomic) IBOutlet UILabel *labelModel;
@@ -17,7 +19,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *labelLicense;
 
 @property (strong, nonatomic) NSMutableArray * listAgency;
-@property (assign, nonatomic) VehicleModel model;
+
 
 @end
 
@@ -35,20 +37,25 @@
 
 -(void)configurarCelda:( NSMutableArray * )vehicle {
     
+   //Configurar Modelo
+    VehicleModel model = [[vehicle valueForKey:@"model"] intValue];
+   [self.labelModel setText:[NSString stringWithFormat:@"Modelo: %@",[Vehicle stringForVehicleModelCode:model]]];
+    
+    //Configuarar Color
+    VehicleColor color = [[vehicle valueForKey:@"color"] intValue];
+    [self.labelColor setText:[NSString stringWithFormat:@"Color: %@",[Vehicle stringForVehicleColorCode:color]]];
+    
+    //Configurar Licencia
+    [self.labelLicense setText:[NSString stringWithFormat:@"Licencia: %@",[vehicle valueForKey:@"licensePlate"]]];
+    
+    //Configurar Agencia
     PFObject * agency = [vehicle valueForKey:@"agency"];
-    NSNumber * modelVehicle = [vehicle valueForKey:@"model"];
-    self.model= [modelVehicle intValue];
-        NSLog(@"%d",self.model );
     PFQuery *query = [PFQuery queryWithClassName:@"Agency"];
     [query whereKey:@"objectId" equalTo:[agency valueForKey:@"objectId"]];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-   //     NSLog(@"%@",objects);
-        [self.labelAgency setText:[[objects objectAtIndex:0] valueForKey:@"name"]];
-        
-
-    }];
-    
-   }
+           [self.labelAgency setText:[NSString stringWithFormat:@"Agencia: %@",[[objects objectAtIndex:0] valueForKey:@"name"]]];
+        }];
+}
 
 
 @end

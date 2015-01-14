@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SWTableViewCell.h"
 
-@interface ViewControllerVehicle : UIViewController
+@interface ViewControllerVehicle : UIViewController <SWTableViewCellDelegate>
 
 @end

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Screen1ViewController">
@@ -41,30 +41,17 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ABM-YV-bWx">
-                    <rect key="frame" x="28" y="216" width="278" height="29"/>
+                    <rect key="frame" x="15" y="223" width="345" height="29"/>
                     <segments>
-                        <segment title="Corsa"/>
+                        <segment title="Modelo:"/>
                         <segment title="Megane"/>
                         <segment title="Logan"/>
                         <segment title="C4"/>
                         <segment title="Siena"/>
+                        <segment title="Corsa"/>
                     </segments>
                     <connections>
                         <action selector="segmentModel:" destination="-1" eventType="valueChanged" id="WhY-mK-dEx"/>
-                    </connections>
-                </segmentedControl>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vFl-49-pSQ">
-                    <rect key="frame" x="28" y="259" width="278" height="29"/>
-                    <segments>
-                        <segment title="Gray"/>
-                        <segment title="Silver"/>
-                        <segment title="White"/>
-                        <segment title="Black"/>
-                        <segment title="Red"/>
-                        <segment title="Blue"/>
-                    </segments>
-                    <connections>
-                        <action selector="segmentColor:" destination="-1" eventType="valueChanged" id="5C7-Cp-N6x"/>
                     </connections>
                 </segmentedControl>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="licencia" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KjD-8k-Eqd">
@@ -107,6 +94,21 @@
                         <action selector="listVehicle:" destination="-1" eventType="touchUpInside" id="3pI-TQ-FfZ"/>
                     </connections>
                 </button>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vFl-49-pSQ">
+                    <rect key="frame" x="15" y="259" width="345" height="29"/>
+                    <segments>
+                        <segment title="Color:"/>
+                        <segment title="Silver"/>
+                        <segment title="White"/>
+                        <segment title="Black"/>
+                        <segment title="Red"/>
+                        <segment title="Blue"/>
+                        <segment title="Gray"/>
+                    </segments>
+                    <connections>
+                        <action selector="segmentColor:" destination="-1" eventType="valueChanged" id="5C7-Cp-N6x"/>
+                    </connections>
+                </segmentedControl>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
