@@ -9,11 +9,15 @@
 #import "CellCustomVehicle.h"
 #import <Parse/Parse.h>
 #import "Facade.h"
+#import "Vehicle.h"
 @interface CellCustomVehicle ()
 @property (strong, nonatomic) IBOutlet UILabel *labelAgency;
 @property (strong, nonatomic) IBOutlet UILabel *labelModel;
 @property (strong, nonatomic) IBOutlet UILabel *labelColor;
 @property (strong, nonatomic) IBOutlet UILabel *labelLicense;
+
+@property (strong, nonatomic) NSMutableArray * listAgency;
+@property (assign, nonatomic) VehicleModel model;
 
 @end
 
@@ -32,18 +36,19 @@
 -(void)configurarCelda:( NSMutableArray * )vehicle {
     
     PFObject * agency = [vehicle valueForKey:@"agency"];
+    NSNumber * modelVehicle = [vehicle valueForKey:@"model"];
+    self.model= [modelVehicle intValue];
+        NSLog(@"%d",self.model );
+    PFQuery *query = [PFQuery queryWithClassName:@"Agency"];
+    [query whereKey:@"objectId" equalTo:[agency valueForKey:@"objectId"]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+   //     NSLog(@"%@",objects);
+        [self.labelAgency setText:[[objects objectAtIndex:0] valueForKey:@"name"]];
+        
+
+    }];
     
-      // NSLog(@"%@",[agency valueForKey:@"objectId"]);
-    NSDictionary * dic = [[NSDictionary alloc] initWithDictionary:[[Facade sharedInstance] findInParseWith:@"objectId" value:[agency valueForKey:@"objectId"] in:@"Agency"]];
-    for (PFObject * object in dic) {
-        NSLog(@"%@",[object valueForKey:@"name"]);
-    }
-    
-    //[self.labelAgency setText:[agency valueForKey:@"name"]];
-    //[self.labelModel setText:[vehicle valueForKey:@"model"]];
-    //[self.labelColor setText:[vehicle valueForKey:@"color"]];
-   // [self.labelLicense setText:[vehicle valueForKey:@"license"]];
-}
+   }
 
 
 @end
