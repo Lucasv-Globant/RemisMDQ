@@ -105,11 +105,17 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     self.agency=[self.arrayOfAgencies objectAtIndex:indexPath.row];
-    [[MobileApplication sharedInstance] setAgency:[[Agency alloc]initFromDictionary:[[Facade sharedInstance] convertPFObjectToDictionary:self.agency]]];
+    MobileApplication *mainApp = [MobileApplication sharedInstance];
+    Facade *facade = [Facade sharedInstance];
+    Agency *selectedAgency = [[Agency alloc]initFromDictionary:[facade convertPFObjectToDictionary:self.agency]];
+    [mainApp setAgencyOfCurrentRequest:selectedAgency];
 
     
     NSLog(@"%@",self.agency);
-    NSLog(@"%@",[[MobileApplication sharedInstance] agency]);
+    NSLog(@"%@",[[MobileApplication sharedInstance] agencyOfCurrentRequest]);
+    
+    ViewControllerOriginLocationSelection *nextScreen = [[ViewControllerOriginLocationSelection alloc] initWithNibName:@"ViewControllerOriginLocationSelection" bundle:nil];
+    [self.navigationController pushViewController:nextScreen animated:YES];
     
 }
 

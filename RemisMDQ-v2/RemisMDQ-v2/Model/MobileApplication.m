@@ -155,4 +155,10 @@
     }
 }
 
+-(void)setAgencyOfCurrentRequest:(Agency *)agencyOfCurrentRequest
+{
+    _agencyOfCurrentRequest = agencyOfCurrentRequest;
+    [[self currentRequest] setAgency:agencyOfCurrentRequest];
+}
+
 @end

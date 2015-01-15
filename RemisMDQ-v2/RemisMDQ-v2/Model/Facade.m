@@ -7,7 +7,7 @@
 //
 
 #import "Facade.h"
-#import <Parse/Parse.h>
+
 
 
 @interface Facade ()
@@ -144,6 +144,12 @@
     NSArray * allKeys = [parseObject allKeys];
     NSMutableDictionary * retDict = [[NSMutableDictionary alloc] init];
     
+    //Add the common variables for parse (objectId, created_at, updated_at):
+    [retDict setObject:[parseObject objectId] forKey:@"objectId"];
+    [retDict setObject:[parseObject createdAt] forKey:@"created_at"];
+    [retDict setObject:[parseObject updatedAt] forKey:@"updated_at"];
+    
+    //Loop through the class-specific variables, and add them:
     for (NSString * key in allKeys) {
         
         [retDict setObject:[parseObject objectForKey:key] forKey:key];

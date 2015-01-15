@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "Request.h"
+#import <Parse/Parse.h>
+
 
 typedef void (^Success)(NSArray* array);
 typedef void (^Failure)(NSError* error);

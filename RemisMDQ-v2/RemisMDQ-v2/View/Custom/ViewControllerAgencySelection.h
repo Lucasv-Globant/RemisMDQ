@@ -12,6 +12,7 @@
 #import "CellCustomAgency.h"
 #import "MobileApplication.h"
 #import "Agency.h"
+#import "ViewControllerOriginLocationSelection.h"
 
 @interface ViewControllerAgencySelection : UIViewController
 
