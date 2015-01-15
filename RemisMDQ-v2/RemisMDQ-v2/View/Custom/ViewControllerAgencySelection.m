@@ -105,10 +105,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     self.agency=[self.arrayOfAgencies objectAtIndex:indexPath.row];
-    [[MobileApplication sharedInstance] setAgency:[[Agency alloc]initFromDictionary:self.agency]];
+    [[MobileApplication sharedInstance] setAgency:[[Agency alloc]initFromDictionary:[[Facade sharedInstance] convertPFObjectToDictionary:self.agency]]];
 
     
     NSLog(@"%@",self.agency);
+    NSLog(@"%@",[[MobileApplication sharedInstance] agency]);
     
 }
 

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Request.h"
+
 typedef void (^Success)(NSArray* array);
 typedef void (^Failure)(NSError* error);
 @class Request;
@@ -23,5 +24,5 @@ typedef void (^Failure)(NSError* error);
 -(void)updateRequestInParseWith:(NSString *)Id data:(NSDictionary *)dataUpdate;
 -(void)deleteInPaseWith:(NSString *)Id in:(NSString *)from;
 -(void)getInParse:(Success)success failure:(Failure)failure from:(NSString *)from;
-
+-(NSDictionary *)convertPFObjectToDictionary:(PFObject *)parseObject;
 @end
