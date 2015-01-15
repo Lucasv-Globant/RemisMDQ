@@ -9,6 +9,7 @@
 #import "ViewControllerVehicle.h"
 #import "Facade.h"
 #import "CellCustomVehicle.h"
+#import <Parse/Parse.h>
 @interface ViewControllerVehicle ()
 @property (assign, nonatomic) NSInteger cantVehicle;
 @property (strong, nonatomic) NSMutableArray * findObject;
@@ -68,7 +69,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
     // Return the number of rows in the section.
-    return self.cantVehicle;
+    return self.findObject.count;
 }
 
 
@@ -159,15 +160,27 @@
         }
         case 1:
         {
-            /*
+          
             // Delete button was pressed
             NSIndexPath *cellIndexPath = [self.tabla indexPathForCell:cell];
+            NSLog(@"%@",[[self.findObject objectAtIndex:cellIndexPath.row] valueForKey:@"objectId"]);
+            PFObject *object = [PFObject objectWithoutDataWithClassName:@"Vehicle"
+                                                               objectId:[[self.findObject objectAtIndex:cellIndexPath.row] valueForKey:@"objectId"]];
+            [object deleteInBackground];
             
-            [self.findObject [cellIndexPath.section] removeObjectAtIndex:0];
-            [self.tabla deleteRowsAtIndexPaths:@[cellIndexPath] withRowAnimation:UITableViewRowAnimationLeft];
+            [self.findObject removeObject:[self.findObject objectAtIndex:cellIndexPath.row]];
+            [self.tabla   beginUpdates];
+            [self.tabla deleteRowsAtIndexPaths:[NSArray arrayWithObject:cellIndexPath] withRowAnimation:UITableViewRowAnimationLeft];
+            [self.tabla reloadData];
             
-            */
+            [self.tabla deselectRowAtIndexPath:cellIndexPath  animated:YES];
+           
+            
+          
+            
             NSLog(@"Deberia eliminar..pero no pude hacerlo todavia ");
+            [self.tabla endUpdates];
+
             break;
         }
         default:
