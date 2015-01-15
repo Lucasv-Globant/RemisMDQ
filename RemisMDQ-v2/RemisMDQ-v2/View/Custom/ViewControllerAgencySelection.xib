@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewControllerAgencySelection">
             <connections>
+                <outlet property="tableView" destination="QmT-ti-Ng2" id="tIJ-GU-en0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,15 +22,13 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QmT-ti-Ng2">
                     <rect key="frame" x="0.0" y="137" width="375" height="334"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="emm-lE-M8p"/>
+                        <outlet property="delegate" destination="-1" id="n31-h4-kFG"/>
+                    </connections>
                 </tableView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Seleccione Agencia" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8rB-qJ-3yY">
-                    <rect key="frame" x="108" y="108" width="159" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Ciudad: Mar del Plata" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18P-yw-jg8">
-                    <rect key="frame" x="113" y="54" width="149" height="21"/>
+                    <rect key="frame" x="113" y="108" width="149" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
@@ -38,11 +37,9 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="centerX" secondItem="QmT-ti-Ng2" secondAttribute="centerX" id="71x-EM-q1d"/>
-                <constraint firstItem="8rB-qJ-3yY" firstAttribute="top" secondItem="18P-yw-jg8" secondAttribute="bottom" constant="22" id="BBF-kH-RuE"/>
-                <constraint firstAttribute="centerX" secondItem="8rB-qJ-3yY" secondAttribute="centerX" id="NCD-UD-4JU"/>
-                <constraint firstItem="18P-yw-jg8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="54" id="NXl-P2-uQd"/>
-                <constraint firstAttribute="centerY" secondItem="QmT-ti-Ng2" secondAttribute="centerY" id="e7z-dT-8Ke"/>
                 <constraint firstAttribute="centerX" secondItem="18P-yw-jg8" secondAttribute="centerX" id="hRi-0B-dkQ"/>
+                <constraint firstItem="QmT-ti-Ng2" firstAttribute="top" secondItem="18P-yw-jg8" secondAttribute="bottom" constant="8" id="hv9-jM-hmA"/>
+                <constraint firstItem="18P-yw-jg8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="jMQ-eE-2IK"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <point key="canvasLocation" x="149.5" y="97.5"/>

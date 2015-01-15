@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A05E478A1A67EF70009D81B4 /* ViewControllerDestinationLocationSelection.m in Sources */ = {isa = PBXBuildFile; fileRef = A05E47881A67EF70009D81B4 /* ViewControllerDestinationLocationSelection.m */; };
+		A05E478B1A67EF70009D81B4 /* ViewControllerDestinationLocationSelection.xib in Resources */ = {isa = PBXBuildFile; fileRef = A05E47891A67EF70009D81B4 /* ViewControllerDestinationLocationSelection.xib */; };
+		A05E478F1A67EFA7009D81B4 /* ViewControllerOriginLocationSelection.m in Sources */ = {isa = PBXBuildFile; fileRef = A05E478D1A67EFA7009D81B4 /* ViewControllerOriginLocationSelection.m */; };
+		A05E47901A67EFA7009D81B4 /* ViewControllerOriginLocationSelection.xib in Resources */ = {isa = PBXBuildFile; fileRef = A05E478E1A67EFA7009D81B4 /* ViewControllerOriginLocationSelection.xib */; };
+		A05E47941A67F00C009D81B4 /* ViewControllerRecentLocationSelection.m in Sources */ = {isa = PBXBuildFile; fileRef = A05E47921A67F00C009D81B4 /* ViewControllerRecentLocationSelection.m */; };
+		A05E47951A67F00C009D81B4 /* ViewControllerRecentLocationSelection.xib in Resources */ = {isa = PBXBuildFile; fileRef = A05E47931A67F00C009D81B4 /* ViewControllerRecentLocationSelection.xib */; };
+		A05E47991A67F0C8009D81B4 /* ViewControllerCurrentRequestDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = A05E47971A67F0C8009D81B4 /* ViewControllerCurrentRequestDisplay.m */; };
+		A05E479A1A67F0C8009D81B4 /* ViewControllerCurrentRequestDisplay.xib in Resources */ = {isa = PBXBuildFile; fileRef = A05E47981A67F0C8009D81B4 /* ViewControllerCurrentRequestDisplay.xib */; };
 		A06BB2F91A66AD5600B4C138 /* ViewControllerUserSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = A06BB2F71A66AD5600B4C138 /* ViewControllerUserSetup.m */; };
 		A06BB2FA1A66AD5600B4C138 /* ViewControllerUserSetup.xib in Resources */ = {isa = PBXBuildFile; fileRef = A06BB2F81A66AD5600B4C138 /* ViewControllerUserSetup.xib */; };
 		A06BB2FD1A66B03800B4C138 /* AppBackground-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = A06BB2FC1A66B03800B4C138 /* AppBackground-iPad.png */; };
@@ -70,6 +78,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A05E47871A67EF70009D81B4 /* ViewControllerDestinationLocationSelection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerDestinationLocationSelection.h; sourceTree = "<group>"; };
+		A05E47881A67EF70009D81B4 /* ViewControllerDestinationLocationSelection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerDestinationLocationSelection.m; sourceTree = "<group>"; };
+		A05E47891A67EF70009D81B4 /* ViewControllerDestinationLocationSelection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerDestinationLocationSelection.xib; sourceTree = "<group>"; };
+		A05E478C1A67EFA7009D81B4 /* ViewControllerOriginLocationSelection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerOriginLocationSelection.h; sourceTree = "<group>"; };
+		A05E478D1A67EFA7009D81B4 /* ViewControllerOriginLocationSelection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerOriginLocationSelection.m; sourceTree = "<group>"; };
+		A05E478E1A67EFA7009D81B4 /* ViewControllerOriginLocationSelection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerOriginLocationSelection.xib; sourceTree = "<group>"; };
+		A05E47911A67F00C009D81B4 /* ViewControllerRecentLocationSelection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerRecentLocationSelection.h; sourceTree = "<group>"; };
+		A05E47921A67F00C009D81B4 /* ViewControllerRecentLocationSelection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerRecentLocationSelection.m; sourceTree = "<group>"; };
+		A05E47931A67F00C009D81B4 /* ViewControllerRecentLocationSelection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerRecentLocationSelection.xib; sourceTree = "<group>"; };
+		A05E47961A67F0C8009D81B4 /* ViewControllerCurrentRequestDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerCurrentRequestDisplay.h; sourceTree = "<group>"; };
+		A05E47971A67F0C8009D81B4 /* ViewControllerCurrentRequestDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerCurrentRequestDisplay.m; sourceTree = "<group>"; };
+		A05E47981A67F0C8009D81B4 /* ViewControllerCurrentRequestDisplay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerCurrentRequestDisplay.xib; sourceTree = "<group>"; };
 		A06BB2F61A66AD5600B4C138 /* ViewControllerUserSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerUserSetup.h; sourceTree = "<group>"; };
 		A06BB2F71A66AD5600B4C138 /* ViewControllerUserSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerUserSetup.m; sourceTree = "<group>"; };
 		A06BB2F81A66AD5600B4C138 /* ViewControllerUserSetup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerUserSetup.xib; sourceTree = "<group>"; };
@@ -310,6 +330,18 @@
 				A06BB2FE1A66B57000B4C138 /* ViewControllerAgencySelection.h */,
 				A06BB2FF1A66B57000B4C138 /* ViewControllerAgencySelection.m */,
 				A06BB3001A66B57000B4C138 /* ViewControllerAgencySelection.xib */,
+				A05E47871A67EF70009D81B4 /* ViewControllerDestinationLocationSelection.h */,
+				A05E47881A67EF70009D81B4 /* ViewControllerDestinationLocationSelection.m */,
+				A05E47891A67EF70009D81B4 /* ViewControllerDestinationLocationSelection.xib */,
+				A05E478C1A67EFA7009D81B4 /* ViewControllerOriginLocationSelection.h */,
+				A05E478D1A67EFA7009D81B4 /* ViewControllerOriginLocationSelection.m */,
+				A05E478E1A67EFA7009D81B4 /* ViewControllerOriginLocationSelection.xib */,
+				A05E47911A67F00C009D81B4 /* ViewControllerRecentLocationSelection.h */,
+				A05E47921A67F00C009D81B4 /* ViewControllerRecentLocationSelection.m */,
+				A05E47931A67F00C009D81B4 /* ViewControllerRecentLocationSelection.xib */,
+				A05E47961A67F0C8009D81B4 /* ViewControllerCurrentRequestDisplay.h */,
+				A05E47971A67F0C8009D81B4 /* ViewControllerCurrentRequestDisplay.m */,
+				A05E47981A67F0C8009D81B4 /* ViewControllerCurrentRequestDisplay.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -445,8 +477,12 @@
 				A0C59EF01A604749002A2F89 /* Main.storyboard in Resources */,
 				A06BB2FD1A66B03800B4C138 /* AppBackground-iPad.png in Resources */,
 				A4C81D4F1A659CE30091DA29 /* ViewControllerVehicle.xib in Resources */,
+				A05E47951A67F00C009D81B4 /* ViewControllerRecentLocationSelection.xib in Resources */,
+				A05E47901A67EFA7009D81B4 /* ViewControllerOriginLocationSelection.xib in Resources */,
 				A4C81D4A1A65809F0091DA29 /* CellCustomVehicle.xib in Resources */,
 				A0C59EF51A604749002A2F89 /* LaunchScreen.xib in Resources */,
+				A05E478B1A67EF70009D81B4 /* ViewControllerDestinationLocationSelection.xib in Resources */,
+				A05E479A1A67F0C8009D81B4 /* ViewControllerCurrentRequestDisplay.xib in Resources */,
 				A0C59EF21A604749002A2F89 /* Images.xcassets in Resources */,
 				A480AFF31A60516800C34F9B /* Screen1ViewController.xib in Resources */,
 				A06BB2FA1A66AD5600B4C138 /* ViewControllerUserSetup.xib in Resources */,
@@ -477,6 +513,7 @@
 				A4C81D4E1A659CE30091DA29 /* ViewControllerVehicle.m in Sources */,
 				A0C59F261A604C79002A2F89 /* MobileApplication.m in Sources */,
 				A0C59EED1A604749002A2F89 /* ViewController.m in Sources */,
+				A05E478F1A67EFA7009D81B4 /* ViewControllerOriginLocationSelection.m in Sources */,
 				A42E3A891A66F215001F903F /* SWUtilityButtonTapGestureRecognizer.m in Sources */,
 				A0C59EEA1A604749002A2F89 /* AppDelegate.m in Sources */,
 				A06BB2F91A66AD5600B4C138 /* ViewControllerUserSetup.m in Sources */,
@@ -486,11 +523,14 @@
 				A0C59F2A1A604C79002A2F89 /* Vehicle.m in Sources */,
 				A480AFF21A60516800C34F9B /* Screen1ViewController.m in Sources */,
 				A42E3A8A1A66F215001F903F /* SWUtilityButtonView.m in Sources */,
+				A05E47991A67F0C8009D81B4 /* ViewControllerCurrentRequestDisplay.m in Sources */,
+				A05E478A1A67EF70009D81B4 /* ViewControllerDestinationLocationSelection.m in Sources */,
 				A0C59EE71A604749002A2F89 /* main.m in Sources */,
 				A0C59F291A604C79002A2F89 /* User.m in Sources */,
 				A0C59F251A604C79002A2F89 /* Location.m in Sources */,
 				A0C59F271A604C79002A2F89 /* NSString+CustonString.m in Sources */,
 				A0C59F241A604C79002A2F89 /* Facade.m in Sources */,
+				A05E47941A67F00C009D81B4 /* ViewControllerRecentLocationSelection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
