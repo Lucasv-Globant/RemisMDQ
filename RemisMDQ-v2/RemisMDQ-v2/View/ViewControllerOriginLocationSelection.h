@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LocationServices.h"
+#import "ViewControllerRecentLocationSelection.h"
+#import "ViewControllerDestinationLocationSelection.h"
+#import "Location.h"
+#import "MobileApplication.h"
+#import "Request.h"
 
-@interface ViewControllerOriginLocationSelection : UIViewController
+@interface ViewControllerOriginLocationSelection : UIViewController<UITextFieldDelegate>
 
 @end
