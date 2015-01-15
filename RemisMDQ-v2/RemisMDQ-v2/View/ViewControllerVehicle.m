@@ -173,12 +173,11 @@
             [self.tabla deleteRowsAtIndexPaths:[NSArray arrayWithObject:cellIndexPath] withRowAnimation:UITableViewRowAnimationLeft];
             [self.tabla reloadData];
             
-            [self.tabla deselectRowAtIndexPath:cellIndexPath  animated:YES];
+            //[self.tabla deselectRowAtIndexPath:cellIndexPath  animated:YES];
            
             
           
             
-            NSLog(@"Deberia eliminar..pero no pude hacerlo todavia ");
             [self.tabla endUpdates];
 
             break;
