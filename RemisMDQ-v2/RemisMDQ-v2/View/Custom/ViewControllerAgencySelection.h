@@ -11,6 +11,7 @@
 #import <Parse/Parse.h>
 #import "CellCustomAgency.h"
 #import "MobileApplication.h"
+#import "Agency.h"
 
 @interface ViewControllerAgencySelection : UIViewController
 

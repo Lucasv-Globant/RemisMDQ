@@ -105,6 +105,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     self.agency=[self.arrayOfAgencies objectAtIndex:indexPath.row];
+    [[MobileApplication sharedInstance] setAgency:[[Agency alloc]initFromDictionary:self.agency]];
+
+    
     NSLog(@"%@",self.agency);
     
 }

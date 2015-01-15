@@ -94,6 +94,7 @@
 }
 
 
+#pragma mark Supporting methods for persistence
 -(NSDictionary *)currentUserOutputToDictionary
 {
     return [[self user] outputToDictionary];

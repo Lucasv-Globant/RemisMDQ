@@ -14,4 +14,8 @@
 
 @property (nonatomic, strong) NSString *name;
 
+
+-(id)initFromDictionary:(NSDictionary *)aDictionary;
+-(NSMutableDictionary *)outputToMutableDictionary;
+-(NSDictionary *)outputToDictionary;
 @end

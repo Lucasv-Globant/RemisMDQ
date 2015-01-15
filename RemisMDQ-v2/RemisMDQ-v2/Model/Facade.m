@@ -139,4 +139,17 @@
     }];
 }
 
+-(NSDictionary *)convertPFObjectToDictionary:(PFObject *)parseObject
+{
+    NSArray * allKeys = [parseObject allKeys];
+    NSMutableDictionary * retDict = [[NSMutableDictionary alloc] init];
+    
+    for (NSString * key in allKeys) {
+        
+        [retDict setObject:[parseObject objectForKey:key] forKey:key];
+    }
+    return retDict;
+}
+
+
 @end
