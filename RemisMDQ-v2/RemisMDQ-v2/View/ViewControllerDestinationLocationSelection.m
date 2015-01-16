@@ -9,6 +9,9 @@
 #import "ViewControllerDestinationLocationSelection.h"
 
 @interface ViewControllerDestinationLocationSelection ()
+@property (strong, nonatomic) IBOutlet UITextField *textFieldHouseNumbering;
+@property (strong, nonatomic) IBOutlet UITextField *textFieldStreet;
+
 
 @end
 
@@ -22,6 +25,39 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)goToNextScreen:(id)sender {
+    NSMutableDictionary *locationValues = [[NSMutableDictionary alloc] init];
+    
+    [locationValues setObject:@"Mar del Plata" forKey:@"city"];
+    [locationValues setObject:[[self textFieldStreet] text] forKey:@"streetName"];
+    [locationValues setObject:[[self textFieldHouseNumbering] text] forKey:@"houseNumbering"];
+    
+    
+    if ([LocationServices locationValuesAreValid:locationValues])
+        //If all is Ok, proceed with the creation of the location and go to the next screen...
+    {
+        //Create the location
+        Location *destination = [[Location alloc] init];
+        [destination setCountry:@"Argentina"];
+        [destination setProvince:@"Buenos Aires"];
+        [destination setZipCode:@"7600"];
+        [destination setCity:@"Mar del Plata"];
+        [destination setStreet:[[self textFieldStreet] text]];
+        [destination setHouseNumbering:[[self textFieldHouseNumbering] text]];
+        //Assign it to the singleton of MobileApplication...
+        MobileApplication *mainApp = [MobileApplication sharedInstance];
+        Request *currentRequest = [mainApp currentRequest];
+        [currentRequest setDestinationLocation:destination];
+        //Push the view controller of the next screen...
+        ViewControllerCurrentRequestDisplay *nextScreen = [[ViewControllerCurrentRequestDisplay alloc] initWithNibName:@"ViewControllerCurrentRequestDisplay" bundle:nil];
+        [self.navigationController pushViewController:nextScreen animated:YES];
+    }
+    else
+    {
+        //The values entered are not valid
+    }
 }
 
 /*

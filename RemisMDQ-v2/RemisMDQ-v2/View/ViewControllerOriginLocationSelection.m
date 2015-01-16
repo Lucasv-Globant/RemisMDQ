@@ -54,8 +54,9 @@
     
     
     if ([LocationServices locationValuesAreValid:locationValues])
+        //If all is Ok, proceed with the creation of the location and go to the next screen...
     {
-        //All Ok, proceed with the creation of the location and go to the next screen...
+        //Create the location
         Location *origin = [[Location alloc] init];
         [origin setCountry:@"Argentina"];
         [origin setProvince:@"Buenos Aires"];
@@ -63,9 +64,11 @@
         [origin setCity:@"Mar del Plata"];
         [origin setStreet:[[self textFieldStreet] text]];
         [origin setHouseNumbering:[[self textFieldHouseNumbering] text]];
-        
-        Request *currentRequest = [[MobileApplication sharedInstance] currentRequest];
+        //Assign it to the singleton of MobileApplication...
+        MobileApplication *mainApp = [MobileApplication sharedInstance];
+        Request *currentRequest = [mainApp currentRequest];
         [currentRequest setOriginLocation:origin];
+        //Push the view controller of the next screen...
         ViewControllerDestinationLocationSelection *nextScreen = [[ViewControllerDestinationLocationSelection alloc] initWithNibName:@"ViewControllerDestinationLocationSelection" bundle:nil];
         [self.navigationController pushViewController:nextScreen animated:YES];
     }
