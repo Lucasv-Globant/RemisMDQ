@@ -1,18 +1,18 @@
 //
-//  ViewControllerCurrentRequestDisplay.m
+//  ViewControllerMapDisplay.m
 //  RemisMDQ-v2
 //
-//  Created by Lucas on 1/15/15.
+//  Created by Lucas on 1/19/15.
 //  Copyright (c) 2015 Globant iOS MDQ. All rights reserved.
 //
 
-#import "ViewControllerCurrentRequestDisplay.h"
+#import "ViewControllerMapDisplay.h"
 
-@interface ViewControllerCurrentRequestDisplay ()
+@interface ViewControllerMapDisplay ()
 
 @end
 
-@implementation ViewControllerCurrentRequestDisplay
+@implementation ViewControllerMapDisplay
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,7 +26,7 @@
 
 - (UITabBarItem *)tabBarItem
 {
-    return [[UITabBarItem alloc] initWithTitle:@"Pedido" image:[UIImage imageNamed:@"TimerTabBarIcon.png"] tag:0];
+    return [[UITabBarItem alloc] initWithTitle:@"Recorrido" image:[UIImage imageNamed:@"map-icon2.png"] tag:1];
 }
 
 

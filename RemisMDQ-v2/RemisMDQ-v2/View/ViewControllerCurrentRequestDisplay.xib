@@ -19,17 +19,25 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stopwatch-2.png" translatesAutoresizingMaskIntoConstraints="NO" id="GZ6-zA-zOl">
-                    <rect key="frame" x="8" y="131" width="319" height="323"/>
+                    <rect key="frame" x="2" y="49" width="319" height="323"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="White_Circle_with_soft_edges.png" translatesAutoresizingMaskIntoConstraints="NO" id="glQ-bw-Z5h">
-                    <rect key="frame" x="42" y="194" width="252" height="258"/>
+                    <rect key="frame" x="38" y="109" width="247" height="258"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="30'" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPn-dA-TjI">
-                    <rect key="frame" x="80" y="227" width="199" height="187"/>
+                    <rect key="frame" x="74" y="144" width="199" height="187"/>
                     <fontDescription key="fontDescription" type="system" pointSize="135"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7e-2X-Re3">
+                    <rect key="frame" x="37" y="381" width="252" height="30"/>
+                    <color key="backgroundColor" red="0.81650589923469385" green="0.0" blue="0.0088599106869226164" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Cancelar Pedido">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

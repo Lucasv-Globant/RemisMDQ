@@ -19,6 +19,10 @@
 		A05E479F1A699040009D81B4 /* stopwatch-2.png in Resources */ = {isa = PBXBuildFile; fileRef = A05E479E1A69903F009D81B4 /* stopwatch-2.png */; };
 		A05E47A11A699109009D81B4 /* color_label_circle_white1.png in Resources */ = {isa = PBXBuildFile; fileRef = A05E47A01A699109009D81B4 /* color_label_circle_white1.png */; };
 		A05E47A31A699111009D81B4 /* White_Circle_with_soft_edges.png in Resources */ = {isa = PBXBuildFile; fileRef = A05E47A21A699111009D81B4 /* White_Circle_with_soft_edges.png */; };
+		A05E47A51A69A055009D81B4 /* TimerTabBarIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = A05E47A41A69A055009D81B4 /* TimerTabBarIcon.png */; };
+		A05E47A71A6D30DD009D81B4 /* map-icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = A05E47A61A6D30DD009D81B4 /* map-icon2.png */; };
+		A05E47AB1A6D313B009D81B4 /* ViewControllerMapDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = A05E47A91A6D313B009D81B4 /* ViewControllerMapDisplay.m */; };
+		A05E47AC1A6D313B009D81B4 /* ViewControllerMapDisplay.xib in Resources */ = {isa = PBXBuildFile; fileRef = A05E47AA1A6D313B009D81B4 /* ViewControllerMapDisplay.xib */; };
 		A06BB2F91A66AD5600B4C138 /* ViewControllerUserSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = A06BB2F71A66AD5600B4C138 /* ViewControllerUserSetup.m */; };
 		A06BB2FA1A66AD5600B4C138 /* ViewControllerUserSetup.xib in Resources */ = {isa = PBXBuildFile; fileRef = A06BB2F81A66AD5600B4C138 /* ViewControllerUserSetup.xib */; };
 		A06BB2FD1A66B03800B4C138 /* AppBackground-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = A06BB2FC1A66B03800B4C138 /* AppBackground-iPad.png */; };
@@ -99,6 +103,11 @@
 		A05E479E1A69903F009D81B4 /* stopwatch-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "stopwatch-2.png"; path = "Assets/stopwatch-2.png"; sourceTree = "<group>"; };
 		A05E47A01A699109009D81B4 /* color_label_circle_white1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = color_label_circle_white1.png; path = Assets/color_label_circle_white1.png; sourceTree = "<group>"; };
 		A05E47A21A699111009D81B4 /* White_Circle_with_soft_edges.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = White_Circle_with_soft_edges.png; path = Assets/White_Circle_with_soft_edges.png; sourceTree = "<group>"; };
+		A05E47A41A69A055009D81B4 /* TimerTabBarIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TimerTabBarIcon.png; path = Assets/TimerTabBarIcon.png; sourceTree = "<group>"; };
+		A05E47A61A6D30DD009D81B4 /* map-icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "map-icon2.png"; path = "Assets/map-icon2.png"; sourceTree = "<group>"; };
+		A05E47A81A6D313B009D81B4 /* ViewControllerMapDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerMapDisplay.h; sourceTree = "<group>"; };
+		A05E47A91A6D313B009D81B4 /* ViewControllerMapDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerMapDisplay.m; sourceTree = "<group>"; };
+		A05E47AA1A6D313B009D81B4 /* ViewControllerMapDisplay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerMapDisplay.xib; sourceTree = "<group>"; };
 		A06BB2F61A66AD5600B4C138 /* ViewControllerUserSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerUserSetup.h; sourceTree = "<group>"; };
 		A06BB2F71A66AD5600B4C138 /* ViewControllerUserSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerUserSetup.m; sourceTree = "<group>"; };
 		A06BB2F81A66AD5600B4C138 /* ViewControllerUserSetup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerUserSetup.xib; sourceTree = "<group>"; };
@@ -214,6 +223,8 @@
 		A06BB2FB1A66AFDA00B4C138 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				A05E47A61A6D30DD009D81B4 /* map-icon2.png */,
+				A05E47A41A69A055009D81B4 /* TimerTabBarIcon.png */,
 				A05E47A21A699111009D81B4 /* White_Circle_with_soft_edges.png */,
 				A05E47A01A699109009D81B4 /* color_label_circle_white1.png */,
 				A05E479E1A69903F009D81B4 /* stopwatch-2.png */,
@@ -356,6 +367,9 @@
 				A05E47961A67F0C8009D81B4 /* ViewControllerCurrentRequestDisplay.h */,
 				A05E47971A67F0C8009D81B4 /* ViewControllerCurrentRequestDisplay.m */,
 				A05E47981A67F0C8009D81B4 /* ViewControllerCurrentRequestDisplay.xib */,
+				A05E47A81A6D313B009D81B4 /* ViewControllerMapDisplay.h */,
+				A05E47A91A6D313B009D81B4 /* ViewControllerMapDisplay.m */,
+				A05E47AA1A6D313B009D81B4 /* ViewControllerMapDisplay.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -487,6 +501,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A05E47AC1A6D313B009D81B4 /* ViewControllerMapDisplay.xib in Resources */,
 				A05E47A11A699109009D81B4 /* color_label_circle_white1.png in Resources */,
 				A06BB3021A66B57000B4C138 /* ViewControllerAgencySelection.xib in Resources */,
 				A0C59EF01A604749002A2F89 /* Main.storyboard in Resources */,
@@ -497,12 +512,14 @@
 				A4C81D4A1A65809F0091DA29 /* CellCustomVehicle.xib in Resources */,
 				A0C59EF51A604749002A2F89 /* LaunchScreen.xib in Resources */,
 				A05E478B1A67EF70009D81B4 /* ViewControllerDestinationLocationSelection.xib in Resources */,
+				A05E47A71A6D30DD009D81B4 /* map-icon2.png in Resources */,
 				A05E479A1A67F0C8009D81B4 /* ViewControllerCurrentRequestDisplay.xib in Resources */,
 				A05E479F1A699040009D81B4 /* stopwatch-2.png in Resources */,
 				A0C59EF21A604749002A2F89 /* Images.xcassets in Resources */,
 				A05E47A31A699111009D81B4 /* White_Circle_with_soft_edges.png in Resources */,
 				A480AFF31A60516800C34F9B /* Screen1ViewController.xib in Resources */,
 				A06BB2FA1A66AD5600B4C138 /* ViewControllerUserSetup.xib in Resources */,
+				A05E47A51A69A055009D81B4 /* TimerTabBarIcon.png in Resources */,
 				A48699621A63FC4000C3CE8F /* CellCustomAgency.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -542,6 +559,7 @@
 				A480AFF21A60516800C34F9B /* Screen1ViewController.m in Sources */,
 				A42E3A8A1A66F215001F903F /* SWUtilityButtonView.m in Sources */,
 				A05E47991A67F0C8009D81B4 /* ViewControllerCurrentRequestDisplay.m in Sources */,
+				A05E47AB1A6D313B009D81B4 /* ViewControllerMapDisplay.m in Sources */,
 				A05E478A1A67EF70009D81B4 /* ViewControllerDestinationLocationSelection.m in Sources */,
 				A0C59EE71A604749002A2F89 /* main.m in Sources */,
 				A0C59F291A604C79002A2F89 /* User.m in Sources */,

@@ -50,9 +50,20 @@
         MobileApplication *mainApp = [MobileApplication sharedInstance];
         Request *currentRequest = [mainApp currentRequest];
         [currentRequest setDestinationLocation:destination];
+        
         //Push the view controller of the next screen...
-        ViewControllerCurrentRequestDisplay *nextScreen = [[ViewControllerCurrentRequestDisplay alloc] initWithNibName:@"ViewControllerCurrentRequestDisplay" bundle:nil];
-        [self.navigationController pushViewController:nextScreen animated:YES];
+        ViewControllerCurrentRequestDisplay *currentRequestScreen = [[ViewControllerCurrentRequestDisplay alloc] initWithNibName:@"ViewControllerCurrentRequestDisplay" bundle:nil];
+        UITabBarController *tabBarController = [[UITabBarController alloc] init];
+        
+        ViewControllerMapDisplay *mapScreen = [[ViewControllerMapDisplay alloc] initWithNibName:@"ViewControllerMapDisplay" bundle:nil];
+        
+        tabBarController.viewControllers = [NSArray arrayWithObjects:
+                                            currentRequestScreen,
+                                            mapScreen,
+                                            nil];
+        
+        // set as the root window
+        [[[UIApplication sharedApplication] keyWindow] setRootViewController:tabBarController];
     }
     else
     {
