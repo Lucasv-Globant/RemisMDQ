@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import <GoogleMaps/GoogleMaps.h>
 @interface AppDelegate ()
 
 @end
@@ -28,7 +28,7 @@
     ViewControllerAgencySelection *start = [[ViewControllerAgencySelection alloc] initWithNibName:@"ViewControllerAgencySelection" bundle:nil];
     [self.window setRootViewController:[[UINavigationController alloc]initWithRootViewController:start]];
     [self.window makeKeyAndVisible];
-    
+    [GMSServices provideAPIKey:@"AIzaSyC20q7OVgKiK0WM4M2VoOB3NqGEEP3qNJ0"];
     return YES;
 }
 
