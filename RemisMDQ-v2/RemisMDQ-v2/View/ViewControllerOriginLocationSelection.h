@@ -14,6 +14,6 @@
 #import "MobileApplication.h"
 #import "Request.h"
 
-@interface ViewControllerOriginLocationSelection : UIViewController<UITextFieldDelegate>
+@interface ViewControllerOriginLocationSelection : UIViewController<UITableViewDelegate, UITableViewDataSource,UITextFieldDelegate>
 
 @end

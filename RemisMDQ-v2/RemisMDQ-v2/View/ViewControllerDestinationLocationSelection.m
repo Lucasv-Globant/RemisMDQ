@@ -11,7 +11,10 @@
 @interface ViewControllerDestinationLocationSelection ()
 @property (strong, nonatomic) IBOutlet UITextField *textFieldHouseNumbering;
 @property (strong, nonatomic) IBOutlet UITextField *textFieldStreet;
+@property (nonatomic, retain) NSMutableArray *autocompleteUrls;
+@property (strong, nonatomic) IBOutlet UITableView *autocompleteTableView;
 
+@property (nonatomic, strong)  NSMutableArray *pastUrls;
 
 @end
 
@@ -19,7 +22,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.autocompleteUrls = [[NSMutableArray alloc] init];
+    self.pastUrls = [[NSMutableArray alloc] initWithObjects:@"Av.Colon",@"Brown",@"Av.Jara",@"Bolivar", nil];
+
+    self.autocompleteTableView.delegate = self;
+    self.autocompleteTableView.dataSource = self;
+    self.autocompleteTableView.scrollEnabled = YES;
+    self.autocompleteTableView.hidden = YES;
+    [self.view addSubview:self.autocompleteTableView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -74,14 +84,63 @@
     }
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)searchAutocompleteEntriesWithSubstring:(NSString *)substring {
+    
+    // Put anything that starts with this substring into the autocompleteUrls array
+    // The items in this array is what will show up in the table view
+    
+    [self.autocompleteUrls removeAllObjects];
+    for(NSString *curString in self.pastUrls) {
+        NSRange substringRange = [curString rangeOfString:substring];
+        if (substringRange.location == 0) {
+            [self.autocompleteUrls addObject:curString];
+        }
+    }
+    [self.autocompleteTableView reloadData];
 }
-*/
+
+#pragma mark UITextFieldDelegate methods
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    self.autocompleteTableView.hidden = NO;
+    
+    NSString *substring = [NSString stringWithString:textField.text];
+    substring = [substring stringByReplacingCharactersInRange:range withString:string];
+    [self searchAutocompleteEntriesWithSubstring:substring];
+    return YES;
+}
+
+#pragma mark UITableViewDataSource methods
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger) section {
+    return self.autocompleteUrls.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = nil;
+    static NSString *AutoCompleteRowIdentifier = @"AutoCompleteRowIdentifier";
+    cell = [tableView dequeueReusableCellWithIdentifier:AutoCompleteRowIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]
+                initWithStyle:UITableViewCellStyleDefault reuseIdentifier:AutoCompleteRowIdentifier];
+    }
+    
+    cell.textLabel.text = [self.autocompleteUrls objectAtIndex:indexPath.row];
+    return cell;
+}
+
+#pragma mark UITableViewDelegate methods
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
+    self.textFieldStreet.text = selectedCell.textLabel.text;
+    self.autocompleteTableView.hidden = true;
+    
+    
+    
+}
+
 
 @end

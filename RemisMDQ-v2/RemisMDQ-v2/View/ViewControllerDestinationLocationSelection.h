@@ -15,6 +15,6 @@
 #import "ViewControllerMapDisplay.h"
 #import "ViewControllerVehicleInformation.h"
 
-@interface ViewControllerDestinationLocationSelection : UIViewController<UITextFieldDelegate>
+@interface ViewControllerDestinationLocationSelection : UIViewController<UITableViewDelegate, UITableViewDataSource,UITextFieldDelegate>
 
 @end
