@@ -13,6 +13,7 @@
 #import "LocationServices.h"
 #import "ViewControllerCurrentRequestDisplay.h"
 #import "ViewControllerMapDisplay.h"
+#import "ViewControllerVehicleInformation.h"
 
 @interface ViewControllerDestinationLocationSelection : UIViewController<UITextFieldDelegate>
 

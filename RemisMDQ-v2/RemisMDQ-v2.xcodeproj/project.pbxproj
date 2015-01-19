@@ -23,6 +23,10 @@
 		A05E47A71A6D30DD009D81B4 /* map-icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = A05E47A61A6D30DD009D81B4 /* map-icon2.png */; };
 		A05E47AB1A6D313B009D81B4 /* ViewControllerMapDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = A05E47A91A6D313B009D81B4 /* ViewControllerMapDisplay.m */; };
 		A05E47AC1A6D313B009D81B4 /* ViewControllerMapDisplay.xib in Resources */ = {isa = PBXBuildFile; fileRef = A05E47AA1A6D313B009D81B4 /* ViewControllerMapDisplay.xib */; };
+		A05E47AE1A6D370A009D81B4 /* car.png in Resources */ = {isa = PBXBuildFile; fileRef = A05E47AD1A6D370A009D81B4 /* car.png */; };
+		A05E47B21A6D374A009D81B4 /* ViewControllerVehicleInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = A05E47B01A6D374A009D81B4 /* ViewControllerVehicleInformation.m */; };
+		A05E47B31A6D374A009D81B4 /* ViewControllerVehicleInformation.xib in Resources */ = {isa = PBXBuildFile; fileRef = A05E47B11A6D374A009D81B4 /* ViewControllerVehicleInformation.xib */; };
+		A05E47B51A6D3F56009D81B4 /* peugeot408.png in Resources */ = {isa = PBXBuildFile; fileRef = A05E47B41A6D3F56009D81B4 /* peugeot408.png */; };
 		A06BB2F91A66AD5600B4C138 /* ViewControllerUserSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = A06BB2F71A66AD5600B4C138 /* ViewControllerUserSetup.m */; };
 		A06BB2FA1A66AD5600B4C138 /* ViewControllerUserSetup.xib in Resources */ = {isa = PBXBuildFile; fileRef = A06BB2F81A66AD5600B4C138 /* ViewControllerUserSetup.xib */; };
 		A06BB2FD1A66B03800B4C138 /* AppBackground-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = A06BB2FC1A66B03800B4C138 /* AppBackground-iPad.png */; };
@@ -108,6 +112,11 @@
 		A05E47A81A6D313B009D81B4 /* ViewControllerMapDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerMapDisplay.h; sourceTree = "<group>"; };
 		A05E47A91A6D313B009D81B4 /* ViewControllerMapDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerMapDisplay.m; sourceTree = "<group>"; };
 		A05E47AA1A6D313B009D81B4 /* ViewControllerMapDisplay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerMapDisplay.xib; sourceTree = "<group>"; };
+		A05E47AD1A6D370A009D81B4 /* car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = car.png; path = Assets/car.png; sourceTree = "<group>"; };
+		A05E47AF1A6D374A009D81B4 /* ViewControllerVehicleInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerVehicleInformation.h; sourceTree = "<group>"; };
+		A05E47B01A6D374A009D81B4 /* ViewControllerVehicleInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerVehicleInformation.m; sourceTree = "<group>"; };
+		A05E47B11A6D374A009D81B4 /* ViewControllerVehicleInformation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerVehicleInformation.xib; sourceTree = "<group>"; };
+		A05E47B41A6D3F56009D81B4 /* peugeot408.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = peugeot408.png; path = Assets/peugeot408.png; sourceTree = "<group>"; };
 		A06BB2F61A66AD5600B4C138 /* ViewControllerUserSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerUserSetup.h; sourceTree = "<group>"; };
 		A06BB2F71A66AD5600B4C138 /* ViewControllerUserSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerUserSetup.m; sourceTree = "<group>"; };
 		A06BB2F81A66AD5600B4C138 /* ViewControllerUserSetup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerUserSetup.xib; sourceTree = "<group>"; };
@@ -223,6 +232,8 @@
 		A06BB2FB1A66AFDA00B4C138 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				A05E47B41A6D3F56009D81B4 /* peugeot408.png */,
+				A05E47AD1A6D370A009D81B4 /* car.png */,
 				A05E47A61A6D30DD009D81B4 /* map-icon2.png */,
 				A05E47A41A69A055009D81B4 /* TimerTabBarIcon.png */,
 				A05E47A21A699111009D81B4 /* White_Circle_with_soft_edges.png */,
@@ -370,6 +381,9 @@
 				A05E47A81A6D313B009D81B4 /* ViewControllerMapDisplay.h */,
 				A05E47A91A6D313B009D81B4 /* ViewControllerMapDisplay.m */,
 				A05E47AA1A6D313B009D81B4 /* ViewControllerMapDisplay.xib */,
+				A05E47AF1A6D374A009D81B4 /* ViewControllerVehicleInformation.h */,
+				A05E47B01A6D374A009D81B4 /* ViewControllerVehicleInformation.m */,
+				A05E47B11A6D374A009D81B4 /* ViewControllerVehicleInformation.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -501,6 +515,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A05E47AE1A6D370A009D81B4 /* car.png in Resources */,
 				A05E47AC1A6D313B009D81B4 /* ViewControllerMapDisplay.xib in Resources */,
 				A05E47A11A699109009D81B4 /* color_label_circle_white1.png in Resources */,
 				A06BB3021A66B57000B4C138 /* ViewControllerAgencySelection.xib in Resources */,
@@ -510,6 +525,8 @@
 				A05E47951A67F00C009D81B4 /* ViewControllerRecentLocationSelection.xib in Resources */,
 				A05E47901A67EFA7009D81B4 /* ViewControllerOriginLocationSelection.xib in Resources */,
 				A4C81D4A1A65809F0091DA29 /* CellCustomVehicle.xib in Resources */,
+				A05E47B51A6D3F56009D81B4 /* peugeot408.png in Resources */,
+				A05E47B31A6D374A009D81B4 /* ViewControllerVehicleInformation.xib in Resources */,
 				A0C59EF51A604749002A2F89 /* LaunchScreen.xib in Resources */,
 				A05E478B1A67EF70009D81B4 /* ViewControllerDestinationLocationSelection.xib in Resources */,
 				A05E47A71A6D30DD009D81B4 /* map-icon2.png in Resources */,
@@ -554,6 +571,7 @@
 				A06BB2F91A66AD5600B4C138 /* ViewControllerUserSetup.m in Sources */,
 				A42E3A881A66F215001F903F /* SWTableViewCell.m in Sources */,
 				A4C81D491A65809F0091DA29 /* CellCustomVehicle.m in Sources */,
+				A05E47B21A6D374A009D81B4 /* ViewControllerVehicleInformation.m in Sources */,
 				A0C59F221A604C79002A2F89 /* Agency.m in Sources */,
 				A0C59F2A1A604C79002A2F89 /* Vehicle.m in Sources */,
 				A480AFF21A60516800C34F9B /* Screen1ViewController.m in Sources */,

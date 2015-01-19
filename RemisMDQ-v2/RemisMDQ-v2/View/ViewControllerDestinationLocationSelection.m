@@ -57,8 +57,11 @@
         
         ViewControllerMapDisplay *mapScreen = [[ViewControllerMapDisplay alloc] initWithNibName:@"ViewControllerMapDisplay" bundle:nil];
         
+        ViewControllerVehicleInformation *vehicleInformation = [[ViewControllerVehicleInformation alloc] initWithNibName:@"ViewControllerVehicleInformation" bundle:nil];
+        
         tabBarController.viewControllers = [NSArray arrayWithObjects:
                                             currentRequestScreen,
+                                            vehicleInformation,
                                             mapScreen,
                                             nil];
         
