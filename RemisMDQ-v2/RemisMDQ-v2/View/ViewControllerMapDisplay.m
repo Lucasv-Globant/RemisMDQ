@@ -55,22 +55,31 @@
 {
     //The string received from google's servers
     NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    
+    /*
     //JSON Framework magic to obtain a dictionary from the jsonString.
     // NSDictionary *results = [jsonString JSONValue];
     NSDictionary *results = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
     NSLog(@"%@",results);
     
     //Now we need to obtain our coordinates
-    NSDictionary *placemark  = [results objectForKey:@"geometry"];
-    NSDictionary *coordinates = [placemark  valueForKeyPath:@"location"];
+    NSArray *placemark  = [results objectForKey:@"results"];
+    NSDictionary *dic = [placemark  valueForKeyPath:@"geometry"];
+    NSDictionary *coordinates = [dic valueForKey:@"location"];
+     //I put my coordinates in my array.
+     double longitude = [[coordinates valueForKey:@"lng"] doubleValue];
+     double latitude = [[coordinates valueForKey:@"lat" ] doubleValue];
+    */
     
-    //I put my coordinates in my array.
-    double longitude = [[coordinates valueForKey:@"lng"] doubleValue];
-    double latitude = [[coordinates valueForKey:@"lat" ] doubleValue];
+    NSDictionary *partialJsonDict = [[[NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil] objectForKey:@"results"] objectAtIndex:0];
+    NSDictionary *geometryDict = [partialJsonDict objectForKey:@"geometry"];
+    Float32 latitude = [[[geometryDict objectForKey:@"location"] objectForKey:@"lat"] floatValue];
+    Float32 longitude = [[[geometryDict objectForKey:@"location"] objectForKey:@"lng"] floatValue];
     
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:-38.010878
-                                                            longitude:-57.535789
+   
+    
+    NSLog(@"latitud: %f longitud:%f",latitude,longitude);
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:latitude
+                                                            longitude:longitude
                                                                  zoom:15];
     GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
     
