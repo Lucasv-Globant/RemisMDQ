@@ -10,6 +10,7 @@
 #import "MobileApplication.h"
 #import "Request.h"
 #import "Location.h"
+#import <MapKit/MapKit.h>
 
 @interface ViewControllerMapDisplay () 
 @property (nonatomic, strong)  Location * destino;
@@ -31,10 +32,12 @@
     Request *currentRequest = [mainApp currentRequest];
     Location * origen =[currentRequest originLocation];
     self.destino = [currentRequest destinationLocation];
+   
     
     [self searchCoordinatesForAddressOrigin:origen.street number:origen.houseNumbering];
     [self searchCoordinatesForAddressDestino:self.destino.street number:self.destino.houseNumbering];
     [self confingMapWithOrigen:self.latitudeO with:self.longitudeO with:self.direccionOrigen withDestino:self.latitudeD with:self.longitudeD with:self.direccionDestino];
+    [self directiongoogle];
 
    
 }
@@ -87,11 +90,6 @@
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 -(void)confingMapWithOrigen:(Float32)latitud with:(Float32)longitud with:(NSString *)direccion withDestino:(Float32)latitudD with:(Float32)longitudD with:(NSString *)direccionD
 {
  
@@ -114,7 +112,7 @@
     marker2.title=direccionD;
     marker.snippet=direccionD;
     marker2.map = _mapView;
-    self.view = _mapView;
+
 }
 
 - (UITabBarItem *)tabBarItem
@@ -122,6 +120,37 @@
     return [[UITabBarItem alloc] initWithTitle:@"Recorrido" image:[UIImage imageNamed:@"map-icon2.png"] tag:1];
 }
 
+-(void)directiongoogle
+{
+    NSMutableString *urlString = [NSMutableString stringWithFormat:@"http://maps.googleapis.com/maps/api/directions/json?origin=%f,%f&destination=%f,%f&sensor=false",self.latitudeO,self.longitudeO,self.latitudeD,self.longitudeD];
+    
+    //Replace Spaces with a '+' character.
+    [urlString setString:[urlString stringByReplacingOccurrencesOfString:@" " withString:@"+"]];
+    
+    //Create NSURL string from a formate URL string.
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    NSData * data=[NSData dataWithContentsOfURL:url];
+    
+    //The string received from google's servers
+    NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSDictionary *partialJsonDict = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
+    //Parseo Json
+    NSArray *routesArray = [partialJsonDict objectForKey:@"routes"];
+    NSDictionary *routeDict = [routesArray objectAtIndex:0];
+    NSDictionary *routeOverviewPolyline = [routeDict objectForKey:@"overview_polyline"];
+    NSString *points = [routeOverviewPolyline objectForKey:@"points"];
+    //Add path
+    GMSPath *path = [GMSPath pathFromEncodedPath:points];
+    //add polyline
+    GMSPolyline *polyline;
+    polyline = [GMSPolyline polylineWithPath:path];
+    polyline.strokeColor = [UIColor greenColor];
+    polyline.strokeWidth = 10.f;
+    //setear polyline en el mapa
+    polyline.map = _mapView;
+    self.view = _mapView;
+}
 
 
 
