@@ -12,8 +12,14 @@
 #import "Location.h"
 
 @interface ViewControllerMapDisplay () 
-
-
+@property (nonatomic, strong)  Location * destino;
+@property (nonatomic, strong)  GMSMapView *mapView;
+@property (nonatomic, strong)  NSString *direccionOrigen;
+@property (nonatomic, strong)  NSString *direccionDestino;
+@property (nonatomic, assign)  Float32 latitudeD;
+@property (nonatomic, assign)  Float32 longitudeD;
+@property (nonatomic, assign)  Float32 latitudeO;
+@property (nonatomic, assign)  Float32 longitudeO;
 @end
 
 @implementation ViewControllerMapDisplay
@@ -24,18 +30,17 @@
     MobileApplication *mainApp = [MobileApplication sharedInstance];
     Request *currentRequest = [mainApp currentRequest];
     Location * origen =[currentRequest originLocation];
-    Location * destino = [currentRequest destinationLocation];
-    NSLog(@"origen:%@ destino:%@",origen.street,destino);
+    self.destino = [currentRequest destinationLocation];
     
-    [self searchCoordinatesForAddress:origen.street number:origen.houseNumbering];
-    
-    
+    [self searchCoordinatesForAddressOrigin:origen.street number:origen.houseNumbering];
+    [self searchCoordinatesForAddressDestino:self.destino.street number:self.destino.houseNumbering];
+    [self confingMapWithOrigen:self.latitudeO with:self.longitudeO with:self.direccionOrigen withDestino:self.latitudeD with:self.longitudeD with:self.direccionDestino];
+
    
 }
 
-- (void) searchCoordinatesForAddress:(NSString *)street number:(NSString *)housenumber
+- (void) searchCoordinatesForAddressOrigin:(NSString *)street number:(NSString *)housenumber
 {
-    //Build the string to Query Google Maps.
     NSMutableString *urlString = [NSMutableString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/json?address=%@+%@,+Mar+del+Plata,+Buenos Aires,+Argentina&sensor=true_or_false",housenumber,street];
     
     //Replace Spaces with a '+' character.
@@ -44,58 +49,72 @@
     //Create NSURL string from a formate URL string.
     NSURL *url = [NSURL URLWithString:urlString];
     
-    //Setup and start an async download.
-    //Note that we should test for reachability!.
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+     NSData * data=[NSData dataWithContentsOfURL:url];
+    
+    //The string received from google's servers
+    NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    //JSON Framework magic to obtain a dictionary from the jsonString.
+    NSDictionary *partialJsonDict = [[[NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil] objectForKey:@"results"] objectAtIndex:0];
+    NSDictionary *geometryDict = [partialJsonDict objectForKey:@"geometry"];
+    //Now we need to obtain our coordinates
+    self.latitudeO = [[[geometryDict objectForKey:@"location"] objectForKey:@"lat"] floatValue];
+    self.longitudeO = [[[geometryDict objectForKey:@"location"] objectForKey:@"lng"] floatValue];
+    self.direccionOrigen = [partialJsonDict objectForKey:@"formatted_address"];
     
 }
 
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+- (void) searchCoordinatesForAddressDestino:(NSString *)street number:(NSString *)housenumber
 {
+    NSMutableString *urlString = [NSMutableString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/json?address=%@+%@,+Mar+del+Plata,+Buenos Aires,+Argentina&sensor=true_or_false",housenumber,street];
+    
+    //Replace Spaces with a '+' character.
+    [urlString setString:[urlString stringByReplacingOccurrencesOfString:@" " withString:@"+"]];
+    
+    //Create NSURL string from a formate URL string.
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    NSData * data=[NSData dataWithContentsOfURL:url];
+    
     //The string received from google's servers
     NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    /*
     //JSON Framework magic to obtain a dictionary from the jsonString.
-    // NSDictionary *results = [jsonString JSONValue];
-    NSDictionary *results = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
-    NSLog(@"%@",results);
-    
-    //Now we need to obtain our coordinates
-    NSArray *placemark  = [results objectForKey:@"results"];
-    NSDictionary *dic = [placemark  valueForKeyPath:@"geometry"];
-    NSDictionary *coordinates = [dic valueForKey:@"location"];
-     //I put my coordinates in my array.
-     double longitude = [[coordinates valueForKey:@"lng"] doubleValue];
-     double latitude = [[coordinates valueForKey:@"lat" ] doubleValue];
-    */
-    
     NSDictionary *partialJsonDict = [[[NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil] objectForKey:@"results"] objectAtIndex:0];
     NSDictionary *geometryDict = [partialJsonDict objectForKey:@"geometry"];
-    Float32 latitude = [[[geometryDict objectForKey:@"location"] objectForKey:@"lat"] floatValue];
-    Float32 longitude = [[[geometryDict objectForKey:@"location"] objectForKey:@"lng"] floatValue];
-    
-   
-    
-    NSLog(@"latitud: %f longitud:%f",latitude,longitude);
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:latitude
-                                                            longitude:longitude
-                                                                 zoom:15];
-    GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
-    
-    GMSMarker *marker = [[GMSMarker alloc] init];
-    marker.position = camera.target;
-    marker.snippet = @"Hello World";
-    marker.appearAnimation = kGMSMarkerAnimationPop;
-    marker.map = mapView;
-    self.view = mapView;
-
+    //Now we need to obtain our coordinates
+    self.latitudeD = [[[geometryDict objectForKey:@"location"] objectForKey:@"lat"] floatValue];
+    self.longitudeD = [[[geometryDict objectForKey:@"location"] objectForKey:@"lng"] floatValue];
+    self.direccionDestino = [partialJsonDict objectForKey:@"formatted_address"];
     
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)confingMapWithOrigen:(Float32)latitud with:(Float32)longitud with:(NSString *)direccion withDestino:(Float32)latitudD with:(Float32)longitudD with:(NSString *)direccionD
+{
+ 
+    //Map
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:latitud
+                                                            longitude:longitud
+                                                                 zoom:15];
+    self.mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+    
+    
+    GMSMarker *marker = [[GMSMarker alloc] init];
+    
+    marker.position=CLLocationCoordinate2DMake(latitud, longitud);
+    marker.title=@"Tu pedido";
+    marker.snippet=direccion;
+    marker.map = _mapView;
+    
+    GMSMarker *marker2 = [[GMSMarker alloc] init];
+    marker2.position=CLLocationCoordinate2DMake(latitudD, longitudD);
+    marker2.title=direccionD;
+    marker.snippet=direccionD;
+    marker2.map = _mapView;
+    self.view = _mapView;
 }
 
 - (UITabBarItem *)tabBarItem
