@@ -7,8 +7,10 @@
 //
 
 #import "ViewControllerCurrentRequestDisplay.h"
+#import "ViewControllerAgencySelection.h"
 
 @interface ViewControllerCurrentRequestDisplay ()
+@property (strong, nonatomic) IBOutlet UIButton *buttonCancel;
 
 @end
 
@@ -28,17 +30,11 @@
 {
     return [[UITabBarItem alloc] initWithTitle:@"Pedido" image:[UIImage imageNamed:@"TimerTabBarIcon.png"] tag:0];
 }
-
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)cancelRequest:(id)sender {
+    ViewControllerAgencySelection * nextScreen = [[ViewControllerAgencySelection alloc] initWithNibName:@"ViewControllerAgencySelection" bundle:nil];
+    [self.navigationController pushViewController:nextScreen animated:YES];
 }
-*/
+
+
 
 @end
