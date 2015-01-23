@@ -8,10 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol MyCustomCellDelegate <NSObject>
+- (void)next;
+
+@end
+
+
 @interface CellCustomAgency : UITableViewCell
 //IBOutlet
 @property (strong, nonatomic) IBOutlet UILabel *labelNameAgency;
-
+@property (strong, nonatomic) IBOutlet UIButton *buttonNext;
+@property (nonatomic, assign) id<MyCustomCellDelegate> delegate;
 //Method
 -(void)configurarCelda:( NSMutableArray * )agency;
 @end

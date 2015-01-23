@@ -13,6 +13,7 @@
 #import "Location.h"
 #import "MobileApplication.h"
 #import "Request.h"
+#import "NSString+CustonString.h"
 
 @interface ViewControllerOriginLocationSelection : UIViewController<UITableViewDelegate, UITableViewDataSource,UITextFieldDelegate>
 

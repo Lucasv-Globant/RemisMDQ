@@ -13,7 +13,7 @@
 
 @property (assign, nonatomic)   NSInteger cantidadAgency;
 @property (strong, nonatomic)   PFObject * agency;
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic)   IBOutlet UITableView *tableView;
 @property (strong, nonatomic)   UIRefreshControl * refresh;
 @property (strong, nonatomic)   NSMutableArray * arrayOfAgencies;
 
@@ -28,7 +28,7 @@
     self.arrayOfAgencies = [[NSMutableArray alloc] init];
     [self.tableView registerNib:[UINib nibWithNibName:@"CellCustomAgency"
                                                bundle:[NSBundle mainBundle]]
-         forCellReuseIdentifier:@"CellCustomAgency"] ;
+                               forCellReuseIdentifier:@"CellCustomAgency"] ;
     
     //Cargar Tabla
     [self populateArrayOfAgencies];
@@ -41,13 +41,7 @@
     self.title = @"Seleccione Agencia";
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
--(Success)getAgencySuccessBlock
-{
+-(Success)getAgencySuccessBlock {
     return ^(NSArray * array) {
         __weak typeof(self) weakself = self;
         weakself.cantidadAgency = array.count;
@@ -58,8 +52,7 @@
     };
 }
 
--(Failure)getAgencyFailureBlock
-{
+-(Failure)getAgencyFailureBlock {
     return ^(NSError *error) {
         NSLog(@"error");
     };
@@ -67,8 +60,7 @@
 
 #pragma mark Refresh View method(s)
 //Metodo donde se van a recargar los datos
--(void)refreshView:(UIRefreshControl *)refresh
-{
+-(void)refreshView:(UIRefreshControl *)refresh {
     refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Refreshing data...."];
     NSLog(@"Refreshing data");
     [self.tableView reloadData];
@@ -81,14 +73,11 @@
 
 #pragma mark - UITableViewDataSource
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.cantidadAgency;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *simpleTableIdentifier = @"CellCustomAgency";
     //Intentamos recuperar una celda ya creada.
     CellCustomAgency * cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
@@ -96,44 +85,33 @@
         //Si la celda no existe, la creamos.
         cell=[[CellCustomAgency alloc]init];
     }
-    
+       cell.delegate = self;
     [cell configurarCelda:[self.arrayOfAgencies objectAtIndex:indexPath.row]];
     return cell;
 }
 
 #pragma mark-UITableViewDelegate
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     self.agency=[self.arrayOfAgencies objectAtIndex:indexPath.row];
     MobileApplication *mainApp = [MobileApplication sharedInstance];
     Facade *facade = [Facade sharedInstance];
     Agency *selectedAgency = [[Agency alloc]initFromDictionary:[facade convertPFObjectToDictionary:self.agency]];
     [mainApp setAgencyOfCurrentRequest:selectedAgency];
-
     
     NSLog(@"%@",self.agency);
     NSLog(@"%@",[[MobileApplication sharedInstance] agencyOfCurrentRequest]);
-    
+    [self next];
+}
+
+-(void)next
+{
     ViewControllerOriginLocationSelection *nextScreen = [[ViewControllerOriginLocationSelection alloc] initWithNibName:@"ViewControllerOriginLocationSelection" bundle:nil];
     [self.navigationController pushViewController:nextScreen animated:YES];
-    
 }
-
 
 #pragma mark Download of arrayOfAgencies
--(void)populateArrayOfAgencies
-{
+-(void)populateArrayOfAgencies {
     [[Facade sharedInstance] getInParse:[self getAgencySuccessBlock] failure:[self getAgencyFailureBlock] from:@"Agency"];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

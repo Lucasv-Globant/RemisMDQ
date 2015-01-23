@@ -33,23 +33,16 @@
     [self.view addSubview:self.autocompleteTableView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
--(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
-{
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     return YES;
 }
 
--(BOOL)textFieldShouldReturn:(UITextField *)textField
-{
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return YES;
 }
 
--(void)textFieldDidEndEditing:(UITextField *)textField
-{
+-(void)textFieldDidEndEditing:(UITextField *)textField {
     [textField resignFirstResponder];
 }
 
@@ -57,6 +50,11 @@
 }
 
 - (IBAction)goToNextScreen:(id)sender {
+    if ([[self.textFieldStreet text] EsVacio]||[[self.textFieldHouseNumbering text] EsVacio]) {
+        //Verifico campo vacio
+        [[[UIAlertView alloc] initWithTitle:@"Error" message:@"No ingresaste ninguna campo" delegate:nil cancelButtonTitle:@"Aceptar" otherButtonTitles:@"Cancelar", nil] show];}
+    else{
+
     NSMutableDictionary *locationValues = [[NSMutableDictionary alloc] init];
     
     [locationValues setObject:@"Mar del Plata" forKey:@"city"];
@@ -87,6 +85,7 @@
     {
         //The values entered are not valid
     }
+    }
 }
 
 - (void)searchAutocompleteEntriesWithSubstring:(NSString *)substring {
@@ -101,13 +100,15 @@
             [self.autocompleteUrls addObject:curString];
         }
     }
-    [self.autocompleteTableView reloadData];
+    if (self.autocompleteUrls.count!=0){
+        self.autocompleteTableView.hidden = NO;
+        [self.autocompleteTableView reloadData];}
 }
 
 #pragma mark UITextFieldDelegate methods
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    self.autocompleteTableView.hidden = NO;
+    
     
     NSString *substring = [NSString stringWithString:textField.text];
     substring = [substring stringByReplacingCharactersInRange:range withString:string];
@@ -128,10 +129,12 @@
     cell = [tableView dequeueReusableCellWithIdentifier:AutoCompleteRowIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc]
-                initWithStyle:UITableViewCellStyleDefault reuseIdentifier:AutoCompleteRowIdentifier];
+                    initWithStyle:UITableViewCellStyleDefault
+                  reuseIdentifier:AutoCompleteRowIdentifier];
     }
     
     cell.textLabel.text = [self.autocompleteUrls objectAtIndex:indexPath.row];
+    
     return cell;
 }
 
@@ -142,9 +145,6 @@
     UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
     self.textFieldStreet.text = selectedCell.textLabel.text;
     self.autocompleteTableView.hidden = true;
-    
-    
-    
 }
 
 @end

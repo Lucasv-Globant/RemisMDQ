@@ -68,6 +68,10 @@
 
 - (void) searchCoordinatesForAddressDestino:(NSString *)street number:(NSString *)housenumber
 {
+    if ([street isEqualToString:@"" ]||[housenumber isEqualToString:@""]) {
+        NSLog(@"Vacio");}
+        else{
+        
     NSMutableString *urlString = [NSMutableString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/json?address=%@+%@,+Mar+del+Plata,+Buenos Aires,+Argentina&sensor=true_or_false",housenumber,street];
     
     //Replace Spaces with a '+' character.
@@ -87,16 +91,16 @@
     self.latitudeD = [[[geometryDict objectForKey:@"location"] objectForKey:@"lat"] floatValue];
     self.longitudeD = [[[geometryDict objectForKey:@"location"] objectForKey:@"lng"] floatValue];
     self.direccionDestino = [partialJsonDict objectForKey:@"formatted_address"];
-    
+    }
 }
 
 -(void)confingMapWithOrigen:(Float32)latitud with:(Float32)longitud with:(NSString *)direccion withDestino:(Float32)latitudD with:(Float32)longitudD with:(NSString *)direccionD
 {
  
-    //Map
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:latitud
+   //Map
+      GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:latitud
                                                             longitude:longitud
-                                                                 zoom:15];
+                                                                   zoom:15];
     self.mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
     
     
@@ -106,12 +110,12 @@
     marker.title=@"Tu pedido";
     marker.snippet=direccion;
     marker.map = _mapView;
-    
+    if(latitudD !=0 || longitudD!=0){
     GMSMarker *marker2 = [[GMSMarker alloc] init];
     marker2.position=CLLocationCoordinate2DMake(latitudD, longitudD);
     marker2.title=direccionD;
     marker.snippet=direccionD;
-    marker2.map = _mapView;
+        marker2.map = _mapView;}
 
 }
 
@@ -122,6 +126,8 @@
 
 -(void)directiongoogle
 {
+    if(self.latitudeD !=0 || self.longitudeD!=0){
+  
     NSMutableString *urlString = [NSMutableString stringWithFormat:@"http://maps.googleapis.com/maps/api/directions/json?origin=%f,%f&destination=%f,%f&sensor=false",self.latitudeO,self.longitudeO,self.latitudeD,self.longitudeD];
     
     //Replace Spaces with a '+' character.
@@ -149,6 +155,8 @@
     polyline.strokeWidth = 10.f;
     //setear polyline en el mapa
     polyline.map = _mapView;
+    
+    }
     self.view = _mapView;
 }
 

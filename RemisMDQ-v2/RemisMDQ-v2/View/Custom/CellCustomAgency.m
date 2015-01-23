@@ -24,5 +24,8 @@
    
     [self.labelNameAgency setText:[agency valueForKey:@"name"] ];
 }
+- (IBAction)next:(id)sender {
+    [self.delegate next];
+}
 
 @end

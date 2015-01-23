@@ -98,7 +98,6 @@
     }
 }
 
-
 - (IBAction)AddVehicle:(id)sender {
     //Guardo en Parse Vehiculo
     [Facade sharedInstance];
@@ -121,6 +120,7 @@
     ViewControllerVehicle * control = [[ViewControllerVehicle alloc]initWithNibName:@"ViewControllerVehicle" bundle:[NSBundle mainBundle] ];
     [self.navigationController pushViewController:control animated:YES];
 }
+
 #pragma mark findAgency
 -(void)findAgency
 {
@@ -145,7 +145,6 @@
         NSLog(@"error");
     };
 }
-
 
 #pragma mark - UITableViewDataSource
 
@@ -176,9 +175,5 @@
     NSLog(@"%@",self.agency);
     
 }
-
-
-
-
 
 @end

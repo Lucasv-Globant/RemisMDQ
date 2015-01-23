@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewControllerAgencySelection">
@@ -16,34 +16,43 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AppBackground-iPad.png" translatesAutoresizingMaskIntoConstraints="NO" id="xaD-6r-lKu">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppBackground-iPad.png" translatesAutoresizingMaskIntoConstraints="NO" id="xaD-6r-lKu">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Ciudad: Mar del Plata" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18P-yw-jg8">
-                    <rect key="frame" x="92" y="99" width="149" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QmT-ti-Ng2">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="23" translatesAutoresizingMaskIntoConstraints="NO" id="QmT-ti-Ng2">
                     <rect key="frame" x="0.0" y="137" width="320" height="334"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="334" id="qmG-JI-Phr"/>
+                    </constraints>
+                    <color key="separatorColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="emm-lE-M8p"/>
                         <outlet property="delegate" destination="-1" id="n31-h4-kFG"/>
                     </connections>
                 </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Ciudad: Mar del Plata" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18P-yw-jg8">
+                    <rect key="frame" x="71" y="78" width="178" height="37"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="xaD-6r-lKu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="2cJ-U8-Red"/>
                 <constraint firstAttribute="centerX" secondItem="QmT-ti-Ng2" secondAttribute="centerX" id="71x-EM-q1d"/>
+                <constraint firstItem="QmT-ti-Ng2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="AWr-VE-l2d"/>
                 <constraint firstAttribute="centerX" secondItem="QmT-ti-Ng2" secondAttribute="centerX" id="I4S-uB-BC5"/>
+                <constraint firstAttribute="bottom" secondItem="QmT-ti-Ng2" secondAttribute="bottom" constant="97" id="Myf-pf-DfG"/>
+                <constraint firstAttribute="bottom" secondItem="xaD-6r-lKu" secondAttribute="bottom" constant="-99" id="Vpa-tc-WYs"/>
+                <constraint firstItem="QmT-ti-Ng2" firstAttribute="leading" secondItem="xaD-6r-lKu" secondAttribute="leading" id="eHJ-3c-cGJ"/>
+                <constraint firstAttribute="trailing" secondItem="xaD-6r-lKu" secondAttribute="trailing" constant="-55" id="fKQ-gj-kp4"/>
                 <constraint firstAttribute="centerX" secondItem="18P-yw-jg8" secondAttribute="centerX" id="hRi-0B-dkQ"/>
-                <constraint firstItem="QmT-ti-Ng2" firstAttribute="top" secondItem="18P-yw-jg8" secondAttribute="bottom" constant="8" id="hv9-jM-hmA"/>
-                <constraint firstItem="18P-yw-jg8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="jMQ-eE-2IK"/>
+                <constraint firstItem="QmT-ti-Ng2" firstAttribute="top" secondItem="18P-yw-jg8" secondAttribute="bottom" constant="22" id="hv9-jM-hmA"/>
+                <constraint firstItem="18P-yw-jg8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="78" id="jMQ-eE-2IK"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="149.5" y="97.5"/>
+            <point key="canvasLocation" x="149" y="97"/>
         </view>
     </objects>
     <resources>

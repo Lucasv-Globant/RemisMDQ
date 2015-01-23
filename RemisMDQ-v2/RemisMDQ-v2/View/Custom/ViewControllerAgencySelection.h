@@ -14,7 +14,7 @@
 #import "Agency.h"
 #import "ViewControllerOriginLocationSelection.h"
 
-@interface ViewControllerAgencySelection : UIViewController
+@interface ViewControllerAgencySelection : UIViewController <MyCustomCellDelegate>
 
 
 @end
