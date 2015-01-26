@@ -34,8 +34,6 @@
 		A06BB3021A66B57000B4C138 /* ViewControllerAgencySelection.xib in Resources */ = {isa = PBXBuildFile; fileRef = A06BB3001A66B57000B4C138 /* ViewControllerAgencySelection.xib */; };
 		A0C59EE71A604749002A2F89 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C59EE61A604749002A2F89 /* main.m */; };
 		A0C59EEA1A604749002A2F89 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C59EE91A604749002A2F89 /* AppDelegate.m */; };
-		A0C59EED1A604749002A2F89 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C59EEC1A604749002A2F89 /* ViewController.m */; };
-		A0C59EF01A604749002A2F89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0C59EEE1A604749002A2F89 /* Main.storyboard */; };
 		A0C59EF21A604749002A2F89 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0C59EF11A604749002A2F89 /* Images.xcassets */; };
 		A0C59EF51A604749002A2F89 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0C59EF31A604749002A2F89 /* LaunchScreen.xib */; };
 		A0C59F011A60474A002A2F89 /* RemisMDQ_v2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C59F001A60474A002A2F89 /* RemisMDQ_v2Tests.m */; };
@@ -136,9 +134,6 @@
 		A0C59EE61A604749002A2F89 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A0C59EE81A604749002A2F89 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A0C59EE91A604749002A2F89 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A0C59EEB1A604749002A2F89 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../../ViewController.h; sourceTree = "<group>"; };
-		A0C59EEC1A604749002A2F89 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../../ViewController.m; sourceTree = "<group>"; };
-		A0C59EEF1A604749002A2F89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A0C59EF11A604749002A2F89 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A0C59EF41A604749002A2F89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		A0C59EFA1A60474A002A2F89 /* RemisMDQ-v2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RemisMDQ-v2Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -378,7 +373,6 @@
 				A480AFEF1A60516800C34F9B /* Screen1ViewController.h */,
 				A480AFF01A60516800C34F9B /* Screen1ViewController.m */,
 				A480AFF11A60516800C34F9B /* Screen1ViewController.xib */,
-				A480AFEE1A60504A00C34F9B /* Storyboard */,
 				A486995D1A63FC1C00C3CE8F /* Custom */,
 				A4C81D4B1A659CE30091DA29 /* ViewControllerVehicle.h */,
 				A4C81D4C1A659CE30091DA29 /* ViewControllerVehicle.m */,
@@ -409,16 +403,6 @@
 				A05E47B11A6D374A009D81B4 /* ViewControllerVehicleInformation.xib */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		A480AFEE1A60504A00C34F9B /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				A0C59EEB1A604749002A2F89 /* ViewController.h */,
-				A0C59EEC1A604749002A2F89 /* ViewController.m */,
-				A0C59EEE1A604749002A2F89 /* Main.storyboard */,
-			);
-			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		A480AFF41A60517E00C34F9B /* Framework */ = {
@@ -552,7 +536,6 @@
 				A05E47AC1A6D313B009D81B4 /* ViewControllerMapDisplay.xib in Resources */,
 				A05E47A11A699109009D81B4 /* color_label_circle_white1.png in Resources */,
 				A06BB3021A66B57000B4C138 /* ViewControllerAgencySelection.xib in Resources */,
-				A0C59EF01A604749002A2F89 /* Main.storyboard in Resources */,
 				A06BB2FD1A66B03800B4C138 /* AppBackground-iPad.png in Resources */,
 				A4C81D4F1A659CE30091DA29 /* ViewControllerVehicle.xib in Resources */,
 				A05E47951A67F00C009D81B4 /* ViewControllerRecentLocationSelection.xib in Resources */,
@@ -598,7 +581,6 @@
 				A05E479D1A6858BC009D81B4 /* LocationServices.m in Sources */,
 				A4C81D4E1A659CE30091DA29 /* ViewControllerVehicle.m in Sources */,
 				A0C59F261A604C79002A2F89 /* MobileApplication.m in Sources */,
-				A0C59EED1A604749002A2F89 /* ViewController.m in Sources */,
 				A05E478F1A67EFA7009D81B4 /* ViewControllerOriginLocationSelection.m in Sources */,
 				A42E3A891A66F215001F903F /* SWUtilityButtonTapGestureRecognizer.m in Sources */,
 				A0C59EEA1A604749002A2F89 /* AppDelegate.m in Sources */,
@@ -641,15 +623,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A0C59EEE1A604749002A2F89 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A0C59EEF1A604749002A2F89 /* Base */,
-			);
-			name = Main.storyboard;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		A0C59EF31A604749002A2F89 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
