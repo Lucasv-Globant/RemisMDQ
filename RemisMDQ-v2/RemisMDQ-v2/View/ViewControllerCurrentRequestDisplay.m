@@ -32,7 +32,9 @@
 }
 - (IBAction)cancelRequest:(id)sender {
     ViewControllerAgencySelection * nextScreen = [[ViewControllerAgencySelection alloc] initWithNibName:@"ViewControllerAgencySelection" bundle:nil];
-    [self.navigationController pushViewController:nextScreen animated:YES];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:nextScreen];
+    [self presentViewController:navController animated:YES completion:nil];
+         
 }
 
 

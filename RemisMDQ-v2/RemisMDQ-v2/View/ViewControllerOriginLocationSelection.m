@@ -37,11 +37,6 @@
     return YES;
 }
 
--(BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
-    return YES;
-}
-
 -(void)textFieldDidEndEditing:(UITextField *)textField {
     [textField resignFirstResponder];
 }
@@ -82,9 +77,9 @@
         [self.navigationController pushViewController:nextScreen animated:YES];
     }
     else
-    {
+        {
         //The values entered are not valid
-    }
+        }
     }
 }
 
@@ -123,7 +118,6 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     UITableViewCell *cell = nil;
     static NSString *AutoCompleteRowIdentifier = @"AutoCompleteRowIdentifier";
     cell = [tableView dequeueReusableCellWithIdentifier:AutoCompleteRowIdentifier];
@@ -141,7 +135,6 @@
 #pragma mark UITableViewDelegate methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
     self.textFieldStreet.text = selectedCell.textLabel.text;
     self.autocompleteTableView.hidden = true;
